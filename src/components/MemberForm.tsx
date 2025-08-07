@@ -309,6 +309,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                   <option value="2nd">2nd Year</option>
                   <option value="3rd">3rd Year</option>
                   <option value="4th">4th Year</option>
+                  <option value="#">Alumni</option>
                 </select>
               </div>
               <div>
@@ -328,7 +329,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
             <h3 className="text-lg font-sansita font-semibold text-accent-primary border-b border-glass-border pb-2 mb-4 pt-6">Professional Information</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Role *</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Role *</label>
                 <input
                   type="text"
                   name="professionalInfo.role"
