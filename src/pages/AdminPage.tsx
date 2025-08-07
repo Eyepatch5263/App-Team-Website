@@ -498,7 +498,7 @@ const AdminPage: React.FC = () => {
                                 title="GitHub"
                               >
                                 <Github className='w-4 h-4'/>
-                                <p className='ml-1'>Github</p>
+                                <p className='ml-1 font-sansita'>Github</p>
                               </a>
                             )}
                             {member.professionalInfo.linkedinUrl && (
@@ -510,7 +510,7 @@ const AdminPage: React.FC = () => {
                                 title="LinkedIn"
                               >
                                 <Linkedin className='w-4 h-4'/>
-                                <p className='ml-1'>LinkedIn</p>
+                                <p className='ml-1 font-sansita'>LinkedIn</p>
                                 
                               </a>
                             )}
@@ -519,7 +519,7 @@ const AdminPage: React.FC = () => {
                                 href={member.professionalInfo.portfolioUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-accent-blue hover:underline text-xs flex items-center"
+                                className="text-accent-blue font-sansita hover:underline text-xs flex items-center"
                                 title="Portfolio"
                               >
                                 <ExternalLink className="w-4 h-4 mr-1" />
