@@ -206,7 +206,7 @@ const JoinTeam: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-sansita font-medium text-primary-text mb-1">Review Process</h4>
-                  <p className="text-secondary-text font-inter text-sm">We'll review your application within 5-7 days</p>
+                  <p className="text-secondary-text font-sansita text-sm">We'll review your application within 5-7 days</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -215,7 +215,7 @@ const JoinTeam: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-sansita font-medium text-primary-text mb-1">Interview</h4>
-                  <p className="text-secondary-text font-inter text-sm">Technical interview and team fit assessment</p>
+                  <p className="text-secondary-text font-sansita text-sm">Technical interview and team fit assessment</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -224,7 +224,7 @@ const JoinTeam: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-sansita font-medium text-primary-text mb-1">Welcome Aboard</h4>
-                  <p className="text-secondary-text font-inter text-sm">Join our onboarding program and start contributing</p>
+                  <p className="text-secondary-text font-sansita text-sm">Join our onboarding program and start contributing</p>
                 </div>
               </div>
             </div>

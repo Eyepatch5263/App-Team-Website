@@ -388,7 +388,7 @@ const AdminPage: React.FC = () => {
 
   return (
     <section className="relative py-16 md:py-24">
-      <div className="mx-10  px-4 relative z-10">
+      <div className="md:mx-10 mx-0 px-4 relative z-10">
         <div className="text-center mb-8 md:mb-12">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-sansita font-bold text-primary-text mb-3 md:mb-4">
             Admin <span className="text-accent-primary">Dashboard</span>
