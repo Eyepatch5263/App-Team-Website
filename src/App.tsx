@@ -66,17 +66,15 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
 
-            {/* Admin Page - Only accessible in development environment */}
-            {process.env.NODE_ENV === 'development' && (
-              <Route
-                path="/xjfhe839" // Using the existing hidden path for consistency
-                element={
-                  <Suspense fallback={<LoadingSpinner />}>
-                    <AdminPage />
-                  </Suspense>
-                }
-              />
-            )}
+            {/* Admin Page - Hidden route */}
+            <Route
+              path="/xjfhe839"
+              element={
+                <Suspense fallback={<LoadingSpinner />}>
+                  <AdminPage />
+                </Suspense>
+              }
+            />
 
             {/* Catch-all route for 404 - MUST BE THE LAST ROUTE */}
             <Route path="*" element={<NoMatch />} />

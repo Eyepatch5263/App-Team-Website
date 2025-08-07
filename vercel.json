@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "buildCommand": "cd frontend && npm run build",
+  "installCommand": "cd frontend && npm install",
+  "outputDirectory": "frontend/dist",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/xjfhe839",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
