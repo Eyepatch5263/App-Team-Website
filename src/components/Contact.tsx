@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Instagram, LoaderIcon } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, LoaderIcon } from 'lucide-react';
 import GlassCard from './GlassCard';
 import GlowButton from './GlowButton';
 
@@ -97,46 +97,46 @@ const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Information */}
-            <GlassCard className="p-6 md:p-8">
-              <h3 className="text-xl md:text-2xl font-sansita font-semibold text-primary-text mb-6 md:mb-8">
-                Contact <span className="text-accent-secondary">Information</span>
-              </h3>
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <a
-                    key={index}
-                    href={info.link}
-                    className="flex items-start space-x-4 p-4 rounded-lg hover:bg-accent-primary/5 transition-colors duration-300 group"
-                  >
-                    <div className="text-accent-primary group-hover:scale-110 transition-transform duration-300 mt-1">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-primary-text font-sansita font-medium mb-1 group-hover:text-accent-primary transition-colors duration-300">
-                        {info.title}
-                      </h4>
-                      <p className="text-secondary-text font-sansita text-sm md:text-base">
-                        {info.details}
-                      </p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-                {/* google map */}
-                <div className="mt-8 rounded-xl overflow-hidden border border-glass-border shadow-lg">
-                <iframe
-                  title="NIT Hamirpur Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.057732780425!2d76.52739321513244!3d31.70813698129786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b5a6e2e2fbf2b%3A0x6e7e0e92ce40938e!2sNIT%20Hamirpur!5e0!3m2!1sen!2sin!4v1718030000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="220"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-                </div>
+          <GlassCard className="p-6 md:p-8">
+            <h3 className="text-xl md:text-2xl font-sansita font-semibold text-primary-text mb-6 md:mb-8">
+              Contact <span className="text-accent-secondary">Information</span>
+            </h3>
+            <div className="space-y-6">
+              {contactInfo.map((info, index) => (
+                <a
+                  key={index}
+                  href={info.link}
+                  className="flex items-start space-x-4 p-4 rounded-lg hover:bg-accent-primary/5 transition-colors duration-300 group"
+                >
+                  <div className="text-accent-primary group-hover:scale-110 transition-transform duration-300 mt-1">
+                    {info.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-primary-text font-sansita font-medium mb-1 group-hover:text-accent-primary transition-colors duration-300">
+                      {info.title}
+                    </h4>
+                    <p className="text-secondary-text font-sansita text-sm md:text-base">
+                      {info.details}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+            {/* google map */}
+            <div className="mt-8 rounded-xl overflow-hidden border border-glass-border shadow-lg">
+              <iframe
+                title="NIT Hamirpur Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.057732780425!2d76.52739321513244!3d31.70813698129786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b5a6e2e2fbf2b%3A0x6e7e0e92ce40938e!2sNIT%20Hamirpur!5e0!3m2!1sen!2sin!4v1718030000000!5m2!1sen!2sin"
+                width="100%"
+                height="220"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
 
-            </GlassCard>
+          </GlassCard>
 
           {/* Contact Form */}
           <GlassCard className="p-6 md:p-8">

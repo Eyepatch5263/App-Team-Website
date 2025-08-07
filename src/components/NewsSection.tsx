@@ -23,7 +23,7 @@ const NewsSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const axiosInstance = (axios as any).default || axios; 
+    const axiosInstance = (axios).default || axios; 
     const backendUri = import.meta.env.VITE_BACKEND_URI;
     axiosInstance.get(`${backendUri}/api/announcements?isActive=all`)
       .then((res: { data: { data: { announcements: never[]; }; }; }) => {
@@ -38,7 +38,7 @@ const NewsSection: React.FC = () => {
         }));
         setNewsItems([ ...formatted]);
       })
-      .catch((err: any) => {
+      .catch((err: Error) => {
         console.error('Error fetching announcements in NewsSection:', err);
       });
   }, []);

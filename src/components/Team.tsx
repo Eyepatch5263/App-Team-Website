@@ -63,7 +63,7 @@ const Team: React.FC = () => {
   }, []);
 
   const sortedMembers = useMemo(() => {
-    let sorted = [...members];
+    const sorted = [...members];
     if (sortBy === 'role') {
       sorted.sort((a, b) =>
         a.professionalInfo.role.localeCompare(b.professionalInfo.role)

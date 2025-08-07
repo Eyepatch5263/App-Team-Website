@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { User, Mail, Phone, Code, Send, CheckCircle, AlertCircle, Edit, X, Loader } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, X, Loader } from 'lucide-react';
 import GlassCard from './GlassCard';
 import GlowButton from './GlowButton';
 
