@@ -98,33 +98,33 @@ const Team: React.FC = () => {
         <div className="text-accent-primary">
           {getRoleIcon(member.professionalInfo.role)}
         </div>
-        <h3 className="text-lg md:text-xl font-space font-semibold text-primary-text group-hover:text-accent-primary transition-colors duration-300 line-clamp-1">
+        <h3 className="text-lg md:text-xl font-sansita font-semibold text-primary-text group-hover:text-accent-primary transition-colors duration-300 line-clamp-1">
           {member.personalInfo.fullName}
         </h3>
       </div>
 
-      <p className="text-accent-secondary font-inter font-medium mb-2 text-xs md:text-sm line-clamp-2">
+      <p className="text-accent-secondary font-sansita font-medium mb-2 text-xs md:text-sm line-clamp-2">
         {member.professionalInfo.role}
       </p>
 
       {member.membershipInfo.position && (
-        <p className="text-accent-tertiary font-inter text-xs mb-3 md:mb-4">
+        <p className="text-accent-tertiary font-sansita text-xs mb-3 md:mb-4">
           {member.membershipInfo.position}
         </p>
       )}
 
-      <p className="text-muted-text font-inter text-xs md:text-sm mb-4 md:mb-6 leading-relaxed line-clamp-3">
+      <p className="text-muted-text font-sansita text-xs md:text-sm mb-4 md:mb-6 leading-relaxed line-clamp-3">
         {member.professionalInfo.bio}
       </p>
 
       <div className="flex flex-wrap justify-center gap-1 md:gap-2 mb-4 md:mb-6">
         {member.professionalInfo.skills.slice(0, 3).map((skill, index) => (
-          <span key={index} className="px-2 md:px-3 py-1 bg-accent-tertiary/10 text-accent-tertiary text-xs font-inter rounded-full border border-accent-tertiary/30">
+          <span key={index} className="px-2 md:px-3 py-1 bg-accent-tertiary/10 text-accent-tertiary text-xs font-sansita rounded-full border border-accent-tertiary/30">
             {skill}
           </span>
         ))}
         {member.professionalInfo.skills.length > 3 && (
-          <span className="px-2 md:px-3 py-1 bg-neutral-500/10 text-neutral-400 text-xs font-inter rounded-full border border-neutral-500/30">
+          <span className="px-2 md:px-3 py-1 bg-neutral-500/10 text-neutral-400 text-xs font-sansita rounded-full border border-neutral-500/30">
             +{member.professionalInfo.skills.length - 3}
           </span>
         )}
@@ -168,10 +168,10 @@ const Team: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-3xl lg:text-4xl font-space font-bold text-primary-text mb-2">
+          <h2 className="text-3xl lg:text-4xl font-sansita font-bold text-primary-text mb-2">
             Meet Our <span className="text-accent-primary">Team</span>
           </h2>
-          <p className="text-secondary-text max-w-2xl mx-auto">
+          <p className="text-secondary-text font-sansita max-w-2xl mx-auto">
             Developers, designers, thinkers, and creators working together to build amazing tech.
           </p>
         </div>
@@ -180,17 +180,16 @@ const Team: React.FC = () => {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as 'none' | 'role' | 'year')}
-            className="bg-tertiary-dark text-primary-text border border-accent-primary rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent-primary"
+            className="bg-tertiary-dark pr-4 text-primary-text border border-accent-primary rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent-primary"
           >
-            <option className="bg-tertiary-dark text-primary-text">Sort By</option>
-            <option className="bg-tertiary-dark text-primary-text">Role</option>
-            <option className="bg-tertiary-dark text-primary-text">Year</option>
+            <option className="bg-tertiary-dark font-sansita text-primary-text">Role</option>
+            <option className="bg-tertiary-dark font-sansita text-primary-text">Year</option>
           </select>
         </div>
 
         {/* No Members Fallback */}
         {sortedMembers.length === 0 ? (
-          <p className="text-center text-secondary-text">No members found.</p>
+          <p className="text-center font-sansita text-secondary-text">No members found.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {sortedMembers.map((member) => (

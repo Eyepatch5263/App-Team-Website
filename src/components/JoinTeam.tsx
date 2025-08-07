@@ -84,14 +84,14 @@ const JoinTeam: React.FC = () => {
           <div className="text-center mb-12">
             <button
               onClick={handleBackToInfo}
-              className="text-accent-primary hover:text-accent-primary/80 font-inter font-medium mb-4 inline-flex items-center transition-colors duration-300"
+              className="text-accent-primary hover:text-accent-primary/80 font-sansita font-medium mb-4 inline-flex items-center transition-colors duration-300"
             >
               ← Back to Join Team Info
             </button>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-space font-bold text-primary-text mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sansita font-bold text-primary-text mb-4">
               Apply to Join <span className="text-accent-primary">AppTeam</span>
             </h2>
-            <p className="text-base md:text-xl font-inter text-secondary-text max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-xl font-sansita text-secondary-text max-w-3xl mx-auto leading-relaxed">
               Fill out this application form to join our team. We'll review your application and get back to you soon.
             </p>
           </div>
@@ -106,10 +106,10 @@ const JoinTeam: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-space font-bold text-primary-text mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sansita font-bold text-primary-text mb-4 md:mb-6">
             Join Our <span className="text-accent-primary">Team</span>
           </h2>
-          <p className="text-base md:text-xl font-inter text-secondary-text max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl font-sansita text-secondary-text max-w-3xl mx-auto leading-relaxed">
             Ready to be part of something amazing? Join AppTeam and work on innovative projects, 
             participate in competitions, and grow your skills alongside passionate developers.
           </p>
@@ -118,14 +118,14 @@ const JoinTeam: React.FC = () => {
         {/* Why Join Us */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
           {benefits.map((benefit, index) => (
-            <GlassCard key={index} className="p-6 text-center group">
+            <GlassCard key={index} className="p-6 text-center group ">
               <div className={`${benefit.color} mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center`}>
                 {benefit.icon}
               </div>
-              <h3 className="text-lg font-space font-semibold text-primary-text mb-3 group-hover:text-accent-primary transition-colors duration-300">
+              <h3 className="text-lg font-sansita font-semibold text-primary-text mb-3 group-hover:text-accent-primary transition-colors duration-300">
                 {benefit.title}
               </h3>
-              <p className="text-secondary-text font-inter text-sm leading-relaxed">
+              <p className="text-secondary-text font-sansita text-sm leading-relaxed">
                 {benefit.description}
               </p>
             </GlassCard>
@@ -134,7 +134,7 @@ const JoinTeam: React.FC = () => {
 
         {/* Available Roles */}
         <GlassCard className="p-6 md:p-8 mb-12 md:mb-16">
-          <h3 className="text-2xl md:text-3xl font-space font-bold text-primary-text mb-6 md:mb-8 text-center">
+          <h3 className="text-2xl md:text-3xl font-sansita font-bold text-primary-text mb-6 md:mb-8 text-center">
             Available <span className="text-accent-secondary">Roles</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -145,17 +145,17 @@ const JoinTeam: React.FC = () => {
                     {role.icon}
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-space font-semibold text-primary-text mb-2 group-hover:text-accent-primary transition-colors duration-300">
+                    <h4 className="text-xl font-sansita font-semibold text-primary-text mb-2 group-hover:text-accent-primary transition-colors duration-300">
                       {role.title}
                     </h4>
-                    <p className="text-secondary-text font-inter text-sm mb-4 leading-relaxed">
+                    <p className="text-secondary-text font-sansita text-sm mb-4 leading-relaxed">
                       {role.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {role.skills.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="px-3 py-1 bg-accent-tertiary/15 text-accent-tertiary text-xs font-inter rounded-full border border-accent-tertiary/30"
+                          className="px-3 py-1 bg-accent-tertiary/15 text-accent-tertiary text-xs font-sansita rounded-full border border-accent-tertiary/30"
                         >
                           {skill}
                         </span>
@@ -171,14 +171,14 @@ const JoinTeam: React.FC = () => {
         {/* Requirements */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
           <GlassCard className="p-6 md:p-8">
-            <h3 className="text-xl md:text-2xl font-space font-semibold text-primary-text mb-6">
+            <h3 className="text-xl md:text-2xl font-sansita font-semibold text-primary-text mb-6">
               What We're Looking For
             </h3>
             <ul className="space-y-3">
               {requirements.map((requirement, index) => (
                 <li key={index} className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-accent-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-secondary-text font-inter leading-relaxed">
+                  <span className="text-secondary-text font-sansita leading-relaxed">
                     {requirement}
                   </span>
                 </li>
@@ -187,7 +187,7 @@ const JoinTeam: React.FC = () => {
           </GlassCard>
 
           <GlassCard className="p-6 md:p-8">
-            <h3 className="text-xl md:text-2xl font-space font-semibold text-primary-text mb-6">
+            <h3 className="text-xl md:text-2xl font-sansita font-semibold text-primary-text mb-6">
               Application Process
             </h3>
             <div className="space-y-4">
@@ -196,8 +196,8 @@ const JoinTeam: React.FC = () => {
                   1
                 </div>
                 <div>
-                  <h4 className="font-space font-medium text-primary-text mb-1">Submit Application</h4>
-                  <p className="text-secondary-text font-inter text-sm">Fill out our comprehensive application form</p>
+                  <h4 className="font-sansita font-medium text-primary-text mb-1">Submit Application</h4>
+                  <p className="text-secondary-text font-sansita text-sm">Fill out our comprehensive application form</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -205,7 +205,7 @@ const JoinTeam: React.FC = () => {
                   2
                 </div>
                 <div>
-                  <h4 className="font-space font-medium text-primary-text mb-1">Review Process</h4>
+                  <h4 className="font-sansita font-medium text-primary-text mb-1">Review Process</h4>
                   <p className="text-secondary-text font-inter text-sm">We'll review your application within 5-7 days</p>
                 </div>
               </div>
@@ -214,7 +214,7 @@ const JoinTeam: React.FC = () => {
                   3
                 </div>
                 <div>
-                  <h4 className="font-space font-medium text-primary-text mb-1">Interview</h4>
+                  <h4 className="font-sansita font-medium text-primary-text mb-1">Interview</h4>
                   <p className="text-secondary-text font-inter text-sm">Technical interview and team fit assessment</p>
                 </div>
               </div>
@@ -223,7 +223,7 @@ const JoinTeam: React.FC = () => {
                   4
                 </div>
                 <div>
-                  <h4 className="font-space font-medium text-primary-text mb-1">Welcome Aboard</h4>
+                  <h4 className="font-sansita font-medium text-primary-text mb-1">Welcome Aboard</h4>
                   <p className="text-secondary-text font-inter text-sm">Join our onboarding program and start contributing</p>
                 </div>
               </div>
@@ -234,10 +234,10 @@ const JoinTeam: React.FC = () => {
         {/* CTA */}
         <div className="text-center">
           <GlassCard className="p-8 md:p-12 bg-gradient-to-r from-accent-primary/5 to-accent-secondary/5">
-            <h3 className="text-2xl md:text-3xl font-space font-bold text-primary-text mb-4">
+            <h3 className="text-2xl md:text-3xl font-sansita font-bold text-primary-text mb-4">
               Ready to Join Us?
             </h3>
-            <p className="text-secondary-text font-inter leading-relaxed mb-8 max-w-2xl mx-auto">
+            <p className="text-secondary-text font-sansita leading-relaxed mb-8 max-w-2xl mx-auto">
               Take the first step towards joining one of the most innovative tech teams at NIT Hamirpur. 
               We're excited to see what you can bring to our community!
             </p>
@@ -245,8 +245,11 @@ const JoinTeam: React.FC = () => {
               className="group text-lg px-8 py-4"
               onClick={handleApplyNow}
             >
-              Apply Now
+              <div className='flex'>
+                <p className='font-sansita text-md justify-center items-center'>Apply Now</p>
               <ArrowRight className="inline-block ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </div>
+              
             </GlowButton>
           </GlassCard>
         </div>

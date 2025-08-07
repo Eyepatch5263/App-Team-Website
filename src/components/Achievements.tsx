@@ -9,13 +9,10 @@ const Achievements: React.FC = () => {
   const pauseTimeoutRef = useRef<number | null>(null);
   const animationFrameId = useRef<number | null>(null);
 
-  // State for the full-screen image modal
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // Updated scroll speed: both mobile and desktop set to 1 for the slowest smooth speed
   const scrollSpeed = useRef(isMobile ? 1 : 1);
 
-  // Achievement Gallery Images
   const achievementGallery = [
     {
       id: 1,
@@ -55,7 +52,6 @@ const Achievements: React.FC = () => {
     },
   ];
 
-  // Gallery memories - just images without categories
   const galleryMemories = [
     {
       id: 2,
@@ -124,12 +120,6 @@ const Achievements: React.FC = () => {
       description: "Receiving innovation awards",
     },
     {
-      id: 14,
-      image: "/IMG-6.jpg",
-      title: "Award Ceremony",
-      description: "Receiving innovation awards",
-    },
-    {
       id: 15,
       image: "/IMG-7.jpg",
       title: "Award Ceremony",
@@ -137,16 +127,13 @@ const Achievements: React.FC = () => {
     }
   ];
 
-  // Duplicate gallery for seamless looping (minimum of 2 sets, more for long lists)
   const duplicatedGallery = [...achievementGallery, ...achievementGallery, ...achievementGallery];
   const numOriginalItems = achievementGallery.length;
 
 
-  // Detect mobile
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
-      // Set both mobile and desktop speeds to 1
       scrollSpeed.current = 1;
     };
     checkMobile();
@@ -154,7 +141,6 @@ const Achievements: React.FC = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Pause/resume handlers using useCallback for stability
   const handlePause = useCallback(() => {
     setIsAutoScrolling(false);
     if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
@@ -168,7 +154,6 @@ const Achievements: React.FC = () => {
     );
   }, []);
 
-  // Smooth auto-scroll with loop
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer || !isAutoScrolling) {
@@ -186,29 +171,23 @@ const Achievements: React.FC = () => {
       const card = scrollContainer.querySelector(
         "div.flex-shrink-0"
       ) as HTMLElement;
-      // Add gap-x-4 (16px) or gap-x-6 (24px) based on md:gap-6
       const gap = window.innerWidth < 768 ? 16 : 24;
       return card ? card.offsetWidth + gap : 400;
     };
 
-    let cardWidth = getCardWidth(); // Initial calculation
+    let cardWidth = getCardWidth(); 
 
-    // The point at which we jump back
-    // This is the width of the *original* set of items
     const resetPoint = cardWidth * numOriginalItems;
 
     const autoScroll = () => {
       if (!scrollContainer) return;
 
-      // Update cardWidth if it changes (e.g., due to responsive layout changes)
-      cardWidth = getCardWidth(); // Recalculate each frame for responsiveness
+      cardWidth = getCardWidth(); 
 
       scrollContainer.scrollLeft += scrollSpeed.current;
 
-      // If we scroll past the end of the first set of items (the resetPoint),
-      // instantly jump back to the start of the second set of items.
       if (scrollContainer.scrollLeft >= resetPoint) {
-        scrollContainer.scrollLeft -= resetPoint; // Effectively jumps back to the start of the next 'copy'
+        scrollContainer.scrollLeft -= resetPoint; 
       }
 
       animationFrameId.current = requestAnimationFrame(autoScroll);
@@ -274,15 +253,12 @@ const Achievements: React.FC = () => {
       const originalContentWidth = card.offsetWidth * numOriginalItems + (numOriginalItems - 1) * gap;
 
 
-      // If we are near the beginning of the *current* set of items,
-      // instantly jump back to the start of the *previous* complete set of items (a duplicate).
       if (scrollRef.current.scrollLeft < scrollAmount) {
         scrollRef.current.scrollLeft += originalContentWidth;
       }
 
-      // Now perform the smooth scroll from the new position
       scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-      handleResume(); // Resume after a short delay
+      handleResume(); 
     }
   };
 
@@ -298,8 +274,6 @@ const Achievements: React.FC = () => {
       const originalContentWidth = card.offsetWidth * numOriginalItems + (numOriginalItems - 1) * gap;
 
 
-      // If we are near the end of a duplicated set of items, jump back.
-      // This ensures smooth looping when manually scrolling right.
       const threshold = originalContentWidth * (duplicatedGallery.length / numOriginalItems - 1) - scrollAmount;
       if (scrollRef.current.scrollLeft >= threshold) {
          scrollRef.current.scrollLeft -= originalContentWidth;
@@ -307,7 +281,7 @@ const Achievements: React.FC = () => {
 
 
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      handleResume(); // Resume after a short delay
+      handleResume(); 
     }
   };
 
@@ -351,14 +325,12 @@ const Achievements: React.FC = () => {
     },
   ];
 
-  // Effect to handle body scroll lock when modal is open
   useEffect(() => {
     if (selectedImage) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-    // Cleanup on unmount or if selectedImage changes
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -370,10 +342,10 @@ const Achievements: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-space font-bold text-primary-text mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sansita font-bold text-primary-text mb-4 md:mb-6">
             Our <span className="text-accent-tertiary">Achievements</span>
           </h2>
-          <p className="text-base md:text-xl font-inter text-secondary-text max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl font-sansita text-secondary-text max-w-3xl mx-auto leading-relaxed">
             Celebrating our journey of excellence, innovation, and competitive
             success in the world of app development and technology competitions.
           </p>
@@ -384,7 +356,7 @@ const Achievements: React.FC = () => {
           <GlassCard className="p-4 md:p-8">
             {/* Gallery Header */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 md:mb-8 gap-4">
-              <h3 className="text-xl md:text-2xl font-space font-semibold text-primary-text">
+              <h3 className="text-xl md:text-2xl font-sansita font-semibold text-primary-text">
                 Achievement <span className="text-accent-primary">Gallery</span>
               </h3>
               <div className="flex space-x-2">
@@ -434,7 +406,7 @@ const Achievements: React.FC = () => {
                       {/* Achievement Type Badge */}
                       <div className="absolute top-3 md:top-4 right-3 md:right-4">
                         <div
-                          className={`px-2 md:px-3 py-1 rounded-full text-xs font-inter border backdrop-blur-sm ${getTypeColor(
+                          className={`px-2 md:px-3 py-1 rounded-full text-xs font-sansita border backdrop-blur-sm ${getTypeColor(
                             achievement.type
                           )}`}
                         >
@@ -450,7 +422,7 @@ const Achievements: React.FC = () => {
                       {/* Year Badge */}
                       <div className="absolute top-3 md:top-4 left-3 md:left-4">
                         <div className="bg-accent-primary/80 backdrop-blur-sm rounded-lg px-2 md:px-3 py-1 border border-glass-border">
-                          <span className="text-white font-inter text-xs">
+                          <span className="text-white font-sansita text-xs">
                             {achievement.year}
                           </span>
                         </div>
@@ -462,16 +434,16 @@ const Achievements: React.FC = () => {
 
                     {/* Achievement Details */}
                     <div className="p-4 md:p-6">
-                      <h4 className="text-lg md:text-xl font-space font-semibold text-primary-text mb-2 md:mb-3 group-hover:text-accent-primary transition-colors duration-300 line-clamp-1">
+                      <h4 className="text-lg md:text-xl font-sansita font-semibold text-primary-text mb-2 md:mb-3 group-hover:text-accent-primary transition-colors duration-300 line-clamp-1">
                         {achievement.title}
                       </h4>
 
-                      <p className="text-secondary-text font-inter text-sm leading-relaxed mb-3 md:mb-4 line-clamp-2">
+                      <p className="text-secondary-text font-sansita text-sm leading-relaxed mb-3 md:mb-4 line-clamp-2">
                         {achievement.description}
                       </p>
 
                       <div className="flex items-center justify-between">
-                        <div className="text-sm font-inter text-accent-secondary truncate">
+                        <div className="text-sm font-sansita text-accent-secondary truncate">
                           {achievement.event}
                         </div>
                       </div>
@@ -483,7 +455,7 @@ const Achievements: React.FC = () => {
 
             {/* Auto-scroll indicator */}
             <div className="flex justify-center mt-4 md:mt-6">
-              <div className="flex items-center space-x-2 text-secondary-text text-xs md:text-sm font-inter">
+              <div className="flex items-center space-x-2 text-secondary-text text-xs md:text-sm font-sansita">
                 <div
                   className={`w-2 h-2 bg-accent-primary rounded-full transition-all duration-300 ${
                     isAutoScrolling ? "animate-pulse scale-110" : "opacity-50"
@@ -491,7 +463,7 @@ const Achievements: React.FC = () => {
                 ></div>
                 <span>
                   {isAutoScrolling
-                    ? "Auto-scrolling gallery • Hover to pause"
+                    ? "Auto-scrolling gallery  •  Hover to pause"
                     : "Auto-scroll paused • Will resume shortly"}
                 </span>
               </div>
@@ -499,14 +471,12 @@ const Achievements: React.FC = () => {
           </GlassCard>
         </div>
 
-        {/* Memories Gallery Section */}
         <div className="mb-12 md:mb-16">
           <GlassCard className="p-6 md:p-8">
-            <h3 className="text-xl md:text-2xl font-space font-semibold text-primary-text mb-6 text-center">
+            <h3 className="text-xl md:text-2xl font-sansita font-semibold text-primary-text mb-6 text-center">
               Our <span className="text-accent-primary">Memories</span>
             </h3>
 
-            {/* Memories Grid - Full size images */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
               {galleryMemories.map((memory) => (
                 <div
@@ -518,20 +488,9 @@ const Achievements: React.FC = () => {
                     <img
                       src={memory.image}
                       alt={memory.title}
-                      // Changed to object-cover to make images "clearly seen or zoom them" by filling the container
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       loading="lazy"
                     />
-                    {/* Removed overlay info (title and description) as requested */}
-                    {/* <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <h4 className="text-white font-space font-semibold text-sm mb-1">
-                        {memory.title}
-                      </h4>
-                      <p className="text-neutral-200 font-inter text-xs">
-                        {memory.description}
-                      </p>
-                    </div> */}
                   </div>
                 </div>
               ))}
@@ -540,7 +499,7 @@ const Achievements: React.FC = () => {
             {galleryMemories.length === 0 && (
               <div className="text-center py-12">
                 <Camera className="w-12 h-12 text-muted-text mx-auto mb-4" />
-                <p className="text-secondary-text font-inter">
+                <p className="text-secondary-text font-sansita">
                   No memories found yet.
                 </p>
               </div>
@@ -550,7 +509,7 @@ const Achievements: React.FC = () => {
 
         {/* Timeline */}
         <GlassCard className="p-6 md:p-8">
-          <h3 className="text-xl md:text-2xl font-space font-semibold text-primary-text mb-6 md:mb-8 text-center">
+          <h3 className="text-xl md:text-2xl font-sansita font-semibold text-primary-text mb-6 md:mb-8 text-center">
             Our <span className="text-accent-primary">Journey</span>
           </h3>
           <div className="space-y-6 md:space-y-8">
@@ -564,14 +523,14 @@ const Achievements: React.FC = () => {
                 ></div>
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
-                    <span className="text-base md:text-lg font-space font-semibold text-primary-text">
+                    <span className="text-base md:text-lg font-sansita font-semibold text-primary-text">
                       {event.title}
                     </span>
-                    <span className="text-sm font-inter text-secondary-text bg-secondary-dark/50 px-2 py-1 rounded w-fit">
+                    <span className="text-sm font-sansita text-secondary-text bg-secondary-dark/50 px-2 py-1 rounded w-fit">
                       {event.year}
                     </span>
                   </div>
-                  <p className="text-secondary-text font-inter leading-relaxed text-sm md:text-base">
+                  <p className="text-secondary-text font-sansita leading-relaxed text-sm md:text-base">
                     {event.description}
                   </p>
                 </div>
@@ -581,11 +540,10 @@ const Achievements: React.FC = () => {
         </GlassCard>
       </div>
 
-      {/* Full-screen Image Modal */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
-          onClick={() => setSelectedImage(null)} // Close when clicking outside the image
+          onClick={() => setSelectedImage(null)}
         >
           <button
             className="absolute top-4 right-4 text-white hover:text-accent-primary transition-colors duration-200"
@@ -597,9 +555,9 @@ const Achievements: React.FC = () => {
           <img
             src={selectedImage}
             alt="Full-screen memory"
-            className="max-w-full max-h-full object-contain" // Use object-contain here to show the full image without cropping in the modal
-            loading="eager" // Load this image immediately
-            onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking the image itself
+            className="max-w-full max-h-full object-contain"
+            loading="eager" 
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}

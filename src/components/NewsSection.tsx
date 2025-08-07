@@ -36,7 +36,6 @@ const NewsSection: React.FC = () => {
           bgGradient: 'from-accent-success/10 to-accent-success/5',
           icon: <Sparkles className="w-6 h-6" />
         }));
-        console.log("nhjb",formatted)
         setNewsItems([ ...formatted]);
       })
       .catch((err: any) => {
@@ -97,7 +96,7 @@ const NewsSection: React.FC = () => {
                     <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-3 mb-3">
                       <span
-                      className={`px-3 py-1 rounded-full text-sm font-inter font-medium border ${
+                      className={`px-3 py-1 rounded-full text-sm font-sansita font-medium border ${
                         current.type === 'Urgent'
                         ? 'bg-red-500/20 text-red-500 border-red-500/30'
                         : current.type === 'Achievement'
@@ -115,17 +114,17 @@ const NewsSection: React.FC = () => {
                       </span>
                       <div className="flex items-center text-primary-text text-sm">
                         <Calendar className="w-4 h-4 mr-1" />
-                        <span className="font-inter">
+                        <span className="font-sansita">
                           {current.date && current.time
                             ? `${new Date(current.date).toLocaleDateString()} at ${current.time}`
                             : current.date ? new Date(current.date).toLocaleDateString() : 'Coming Soon'}
                         </span>
                       </div>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-space font-semibold text-primary-text mb-3">
+                    <h3 className="text-xl md:text-2xl font-sansita font-semibold text-primary-text mb-3">
                       {current.title}
                     </h3>
-                    <p className="text-primary-text/80 font-inter leading-relaxed mb-4">
+                    <p className="text-primary-text/80 font-sansita leading-relaxed mb-4">
                       {current.description} 
                     </p>
                   </div>
@@ -146,7 +145,7 @@ const NewsSection: React.FC = () => {
                         : current.type === 'Event'
                         ? 'text-blue-500'
                         : `text-${current.color}`
-                    } hover:opacity-80 transition-colors duration-300 font-inter font-medium group`}
+                    } hover:opacity-80 transition-colors duration-300 font-sansita font-medium group`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -155,7 +154,7 @@ const NewsSection: React.FC = () => {
                   </a>
                 )}
               </div>
-              
+
             </div>
 
             <div className="mt-6 w-full bg-glass-border rounded-full h-1 overflow-hidden">

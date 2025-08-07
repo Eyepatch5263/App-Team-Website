@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { User, Mail, Phone, Code, Send, CheckCircle, AlertCircle, Edit, X } from 'lucide-react';
+import { User, Mail, Phone, Code, Send, CheckCircle, AlertCircle, Edit, X, Loader } from 'lucide-react';
 import GlassCard from './GlassCard';
 import GlowButton from './GlowButton';
 
@@ -80,7 +80,6 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
           if (data.success && data.data) {
             setFormData({
               ...data.data,
-              // Ensure skills are handled correctly (might be a string array from backend)
               professionalInfo: {
                 ...data.data.professionalInfo,
                 skills: Array.isArray(data.data.professionalInfo.skills)
@@ -148,8 +147,8 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
       setFormData((prev) => ({
         ...prev,
         membershipInfo: {
-            ...prev.membershipInfo,
-            [name]: value,
+          ...prev.membershipInfo,
+          [name]: value,
         }
       }));
     }
@@ -174,10 +173,10 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
 
     // Basic validation
     if (!formData.personalInfo.fullName || !formData.personalInfo.email || !formData.personalInfo.rollNumber || !formData.professionalInfo.role || !formData.professionalInfo.bio) {
-        setErrorMessage('Please fill in all required fields (Full Name, Email, Roll Number, Role, Bio).');
-        setIsSubmitting(false);
-        setSubmitStatus('error');
-        return;
+      setErrorMessage('Please fill in all required fields (Full Name, Email, Roll Number, Role, Bio).');
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      return;
     }
 
     try {
@@ -213,15 +212,15 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
   };
 
   // Helper for dynamic input classes
-  const inputClass = "w-full px-4 py-3 bg-glass-white border border-glass-border rounded-lg text-primary-text font-inter placeholder-muted-text focus:border-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-primary/20 transition-colors duration-300";
+  const inputClass = "w-full px-4 py-3 bg-tertiary-dark border border-glass-border rounded-lg text-primary-text font-sansita placeholder-muted-text focus:border-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-primary/20 transition-colors duration-300";
 
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-md p-4">
-      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto custom-scrollbar">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-70 backdrop-blur-md p-4">
+      <div className="relative w-full  max-h-[50vh] overflow-y-auto overflow-x-hidden">
         <GlassCard className="p-6 md:p-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl md:text-2xl font-space font-bold text-primary-text">
+            <h2 className="text-xl md:text-2xl font-sansita font-bold text-primary-text">
               {isEditing ? 'Edit Member Profile' : 'Add New Member'}
             </h2>
             <button
@@ -234,10 +233,10 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Personal Info */}
-            <h3 className="text-lg font-space font-semibold text-accent-primary border-b border-glass-border pb-2 mb-4">Personal Information</h3>
+            <h3 className="text-lg font-sansita font-semibold text-accent-primary border-b border-glass-border pb-2 mb-4">Personal Information</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Full Name *</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Full Name *</label>
                 <input
                   type="text"
                   name="personalInfo.fullName"
@@ -249,7 +248,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Email *</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Email *</label>
                 <input
                   type="email"
                   name="personalInfo.email"
@@ -262,7 +261,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Phone *</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Phone *</label>
                 <input
                   type="tel"
                   name="personalInfo.phone"
@@ -274,7 +273,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Roll Number *</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Roll Number *</label>
                 <input
                   type="text"
                   name="personalInfo.rollNumber"
@@ -286,7 +285,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Branch *</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Branch *</label>
                 <input
                   type="text"
                   name="personalInfo.branch"
@@ -298,7 +297,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Year *</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Year *</label>
                 <select
                   name="personalInfo.year"
                   value={formData.personalInfo.year}
@@ -313,7 +312,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Profile Image URL</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Profile Image URL</label>
                 <input
                   type="url"
                   name="personalInfo.profileImage"
@@ -326,7 +325,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
             </div>
 
             {/* Professional Info */}
-            <h3 className="text-lg font-space font-semibold text-accent-primary border-b border-glass-border pb-2 mb-4 pt-6">Professional Information</h3>
+            <h3 className="text-lg font-sansita font-semibold text-accent-primary border-b border-glass-border pb-2 mb-4 pt-6">Professional Information</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-inter text-secondary-text mb-2">Role *</label>
@@ -341,7 +340,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 />
               </div>
               <div className="md:col-span-2">
-                <label className="block text-sm font-inter text-secondary-text mb-2">Bio *</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Bio *</label>
                 <textarea
                   name="professionalInfo.bio"
                   value={formData.professionalInfo.bio}
@@ -353,7 +352,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 ></textarea>
               </div>
               <div className="md:col-span-2">
-                <label className="block text-sm font-inter text-secondary-text mb-2">Skills (comma-separated)</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Skills (comma-separated)</label>
                 <input
                   type="text"
                   name="professionalInfo.skills" // Note: name property here is just for onChange context
@@ -364,7 +363,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Portfolio URL</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Portfolio URL</label>
                 <input
                   type="url"
                   name="professionalInfo.portfolioUrl"
@@ -375,7 +374,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">GitHub URL</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">GitHub URL</label>
                 <input
                   type="url"
                   name="professionalInfo.githubUrl"
@@ -386,7 +385,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">LinkedIn URL</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">LinkedIn URL</label>
                 <input
                   type="url"
                   name="professionalInfo.linkedinUrl"
@@ -397,7 +396,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Twitter URL</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Twitter URL</label>
                 <input
                   type="url"
                   name="professionalInfo.twitterUrl"
@@ -410,27 +409,26 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
             </div>
 
             {/* Membership Info */}
-            <h3 className="text-lg font-space font-semibold text-accent-primary border-b border-glass-border pb-2 mb-4 pt-6">Membership Information</h3>
+            <h3 className="text-lg font-sansita font-semibold text-accent-primary border-b border-glass-border pb-2 mb-4 pt-6">Membership Information</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Member Type *</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Member Type *</label>
                 <select
-                  name="memberType" // This directly maps to membershipInfo.memberType
+                  name="memberType" 
                   value={formData.membershipInfo.memberType}
                   onChange={handleChange}
                   className={inputClass}
                   required
                 >
-                  <option value="active">Active Member</option>
                   <option value="core">Core Member</option>
                   <option value="alumni">Alumni</option>
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-inter text-secondary-text mb-2">Position (e.g., Lead, Coordinator)</label>
+                <label className="block text-sm font-sansita text-secondary-text mb-2">Position (e.g., Lead, Coordinator)</label>
                 <input
                   type="text"
-                  name="position" // This directly maps to membershipInfo.position
+                  name="position" 
                   value={formData.membershipInfo.position}
                   onChange={handleChange}
                   className={inputClass}
@@ -444,13 +442,13 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
             {submitStatus === 'success' && (
               <div className="flex items-center bg-accent-success/10 text-accent-success px-4 py-3 rounded-lg">
                 <CheckCircle className="w-5 h-5 mr-2 flex-shrink-0" />
-                <span className="font-inter text-sm">{errorMessage}</span>
+                <span className="font-sansita text-sm">{errorMessage}</span>
               </div>
             )}
             {submitStatus === 'error' && (
               <div className="flex items-center bg-accent-error/10 text-accent-error px-4 py-3 rounded-lg">
                 <AlertCircle className="w-5 h-5 mr-2 flex-shrink-0" />
-                <span className="text-accent-error font-inter text-sm">{errorMessage}</span>
+                <span className="text-accent-error font-sansita text-sm">{errorMessage}</span>
               </div>
             )}
 
@@ -459,7 +457,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
               <button
                 type="button"
                 onClick={onClose}
-                className="px-6 py-3 bg-glass-white border border-glass-border text-secondary-text rounded-lg font-inter font-medium hover:bg-hover-bg transition-colors duration-300"
+                className="px-6 py-3 bg-glass-white border border-glass-border text-secondary-text rounded-lg font-sansita font-medium hover:bg-hover-bg transition-colors duration-300"
               >
                 Cancel
               </button>
@@ -469,15 +467,17 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                 className={`${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                    {isEditing ? 'Updating...' : 'Creating...'}
-                  </>
+                  <div className='flex justify-center items-center'>
+                    <Loader className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                    <p className='font-sansita'>{isEditing ? 'Updating...' : 'Creating...'}</p>
+                  </div>
                 ) : (
-                  <>
+                  <div className='flex justify-center items-center'>
                     <Send className="w-4 h-4 mr-2" />
-                    {isEditing ? 'Update Profile' : 'Create Profile'}
-                  </>
+                    <p className='font-sansita'>
+                      {isEditing ? 'Update Profile' : 'Create Profile'}
+                    </p>
+                  </div>
                 )}
               </GlowButton>
             </div>

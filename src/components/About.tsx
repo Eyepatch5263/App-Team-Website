@@ -35,10 +35,10 @@ const About: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-space font-bold text-primary-text mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sansita font-bold text-primary-text mb-4 md:mb-6">
             About <span className="text-accent-primary">AppTeam</span>
           </h2>
-          <p className="text-base md:text-xl font-inter text-secondary-text max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl font-sansita text-secondary-text max-w-4xl mx-auto leading-relaxed">
             We are the premier technology innovation team of NIT Hamirpur, dedicated to creating innovative mobile and web applications. 
             AppTeam designs official applications for both Cultural and Technical Annual festivals of NITH, representing our college 
             with excellence. Through our apps, we inform users about ongoing and upcoming events and conduct various online activities 
@@ -48,10 +48,10 @@ const About: React.FC = () => {
 
         {/* Mission Statement */}
         <GlassCard className="p-6 md:p-8 mb-12 md:mb-16 text-center">
-          <h3 className="text-xl md:text-2xl font-space font-semibold text-primary-text mb-4">
+          <h3 className="text-xl md:text-2xl font-sansita font-semibold text-primary-text mb-4">
             Our <span className="text-accent-secondary">Mission</span>
           </h3>
-          <p className="text-base md:text-lg font-inter text-secondary-text leading-relaxed max-w-4xl mx-auto">
+          <p className="text-base md:text-lg font-sansita text-secondary-text leading-relaxed max-w-4xl mx-auto">
             To bridge the gap between academic learning and industry excellence by developing 
             world-class applications, participating in competitive programming events, and fostering 
             a culture of continuous innovation within our college community and beyond.
@@ -65,10 +65,10 @@ const About: React.FC = () => {
               <div className={`${value.color} mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center`}>
                 {value.icon}
               </div>
-              <h3 className="text-lg font-space font-semibold text-primary-text mb-3 group-hover:text-accent-primary transition-colors duration-300">
+              <h3 className="text-lg font-sansita font-semibold text-primary-text mb-3 group-hover:text-accent-primary transition-colors duration-300">
                 {value.title}
               </h3>
-              <p className="text-secondary-text font-inter text-sm leading-relaxed">
+              <p className="text-secondary-text font-sansita text-sm leading-relaxed">
                 {value.description}
               </p>
             </GlassCard>
@@ -78,11 +78,11 @@ const About: React.FC = () => {
         {/* Code Snippet Display */}
         <div className="mt-12 md:mt-16">
           <GlassCard className="p-6 md:p-8">
-            <h3 className="text-xl font-space font-semibold text-primary-text mb-6 text-center">
+            <h3 className="text-xl font-sansita font-semibold text-primary-text mb-6 text-center">
               Our Development <span className="text-accent-tertiary">Philosophy</span>
             </h3>
             <div className="bg-secondary-dark/50 rounded-lg p-6 border border-glass-border">
-              <pre className="text-sm font-mono text-secondary-text overflow-x-auto">
+              <pre className="text-sm font-sansita text-secondary-text overflow-x-auto">
                 <code>
 {`class AppTeamNITH {
   constructor() {

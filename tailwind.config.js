@@ -36,7 +36,8 @@ export default {
         'space': ['Space Grotesk', 'sans-serif'],
         'mono': ['JetBrains Mono', 'monospace'],
         'inria': ['Inria Sans', 'sans-serif'],
-        'inria-serif':["Inria Serif"]
+        'inria-serif':["Inria Serif"],
+        'sansita':["Sansita"]
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

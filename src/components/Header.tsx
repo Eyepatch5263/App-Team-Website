@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate=useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,13 +23,13 @@ const Header: React.FC = () => {
     { href: '#workshops', label: 'Workshops' },
     { href: '#achievements', label: 'Achievements' },
     { href: '#team', label: 'Team' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#connect', label: 'Connect' },
   ];
 
   return (
     <header
       className={`
-        fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-inria
+        fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sansita
         ${isScrolled
           ? 'backdrop-blur-xl bg-primary-dark/90 border-b border-glass-border shadow-lg shadow-accent-primary/5'
           : 'bg-transparent'
@@ -38,22 +40,25 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-15 h-15 flex items-center justify-center">
+            <div
+              className="w-15 h-15 flex items-center justify-center cursor-pointer"
+              onClick={() => navigate('/')}
+            >
               <img
-                src="/AppTeam.png"
-                alt="AppTeam Logo"
-                className="w-12 h-12 rounded-full ring-2 ring-accent-primary/20"
+              src="/AppTeam.png"
+              alt="AppTeam Logo"
+              className="w-12 h-12 rounded-full ring-2 ring-accent-primary/20"
               />
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 font-inria">
+          <div className="hidden md:flex items-center space-x-8 font-sansita">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-secondary-text font-inria hover:text-accent-primary transition-colors duration-300 relative group font-medium"
+                className="text-secondary-text font-sansita hover:text-accent-primary transition-colors duration-300 relative group font-medium"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-primary transition-all duration-300 group-hover:w-full"></span>
@@ -77,8 +82,8 @@ const Header: React.FC = () => {
               {navItems.map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
-                  className="block py-3 text-secondary-text font-inria hover:text-accent-primary transition-colors duration-300 font-medium"
+                  href={item.href === '#home' ? '/' : item.href}
+                  className="block py-3 text-secondary-text font-sansita hover:text-accent-primary transition-colors duration-300 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}

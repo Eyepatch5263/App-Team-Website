@@ -9,7 +9,7 @@ const Projects: React.FC = () => {
       description: 'Information platform for HackOnHills 6.0 held in April 2025. Complete event management and participant engagement system.',
       image: '/img1.png',
       type: 'app',
-      status: 'Live',
+      status: 'Inactive',
       technologies: ['React Native', 'Firebase', 'Node.js', 'MongoDB'],
       event: 'HOH 6.0',
       links: {
@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
       description: 'Comprehensive platform for our cultural festival Hillfair 2K24. Features event schedules, registrations, and live updates.',
       image: '/img2.png',
       type: 'mobile',
-      status: 'Live',
+      status: 'Inactive',
       technologies: ['React Native', 'Firebase', 'Express.js', 'PostgreSQL'],
       event: 'Hillfair',
       links: {
@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
       description: 'Advanced platform for our technical festival NIMBUS 2K25. Includes competition management and real-time leaderboards.',
       image: '/img3.png',
       type: 'mobile',
-      status: 'Live',
+      status: 'Inactive',
       technologies: ['Flutter', 'Dart', 'AWS', 'GraphQL'],
       event: 'Nimbus',
       links: {
@@ -77,10 +77,10 @@ const Projects: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-space font-bold text-primary-text mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sansita font-bold text-primary-text mb-4 md:mb-6">
             Our <span className="text-accent-secondary">Projects</span>
           </h2>
-          <p className="text-base md:text-xl font-inter text-secondary-text max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl font-sansita text-secondary-text max-w-3xl mx-auto leading-relaxed">
             Discover our innovative applications built for competitions and real-world impact.
             Each project represents our commitment to excellence and cutting-edge development.
           </p>
@@ -115,14 +115,14 @@ const Projects: React.FC = () => {
                       <Globe className="w-4 h-4 text-accent-primary" />
                     )}
                   </div>
-                  <div className={`px-3 py-1 rounded-full text-xs font-inter border backdrop-blur-sm ${getStatusColor(project.status)}`}>
+                  <div className={`px-3 py-1 flex flex-col justify-center items-center rounded-full text-xs font-sansita border backdrop-blur-sm ${getStatusColor(project.status)}`}>
                     {project.status}
                   </div>
                 </div>
 
                 {/* Event Badge */}
                 <div className="absolute top-4 right-4">
-                  <div className={`px-3 py-1 bg-secondary-dark/70 backdrop-blur-sm rounded-full text-xs font-inter border border-glass-border ${getEventColor(project.event)}`}>
+                  <div className={`px-3 py-1 bg-secondary-dark/70 backdrop-blur-sm rounded-full text-xs font-sansita border border-glass-border ${getEventColor(project.event)}`}>
                     {project.event}
                   </div>
                 </div>
@@ -153,10 +153,10 @@ const Projects: React.FC = () => {
 
               {/* Project Info */}
               <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-xl font-space font-semibold text-primary-text mb-3 group-hover:text-accent-primary transition-colors duration-300">
+                <h3 className="text-xl font-sansita font-semibold text-primary-text mb-3 group-hover:text-accent-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-secondary-text font-inter leading-relaxed mb-4 flex-1">
+                <p className="text-secondary-text font-sansita leading-relaxed mb-4 flex-1">
                   {project.description}
                 </p>
 
@@ -165,7 +165,7 @@ const Projects: React.FC = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-accent-tertiary/10 text-accent-tertiary text-xs font-inter rounded-full border border-accent-tertiary/30"
+                      className="px-3 py-1 bg-accent-tertiary/10 text-accent-tertiary text-xs font-sansita rounded-full border border-accent-tertiary/30"
                     >
                       {tech}
                     </span>
