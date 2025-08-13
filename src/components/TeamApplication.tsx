@@ -176,13 +176,8 @@ const TeamApplication: React.FC = () => {
         </h3>
         <p className="text-primary-text/80 font-sansita leading-relaxed mb-6">
           Thank you for your interest in joining AppTeam! We've received your application and will review it carefully.
-          You'll hear back from us within 1-2  days.
+          Join the whatsapp group to stay updated: <a className='text-blue-500' href="https://chat.whatsapp.com/GGLRvV8mJld7CDVVWM8rNz?mode=ac_t">Click Here!</a>
         </p>
-        <div className="bg-accent-blue/10 border border-accent-blue/30 rounded-lg p-4">
-          <p className="text-accent-blue font-sansita text-sm">
-            <strong>Next Steps:</strong> Keep an eye on your email for updates. If selected, you'll be invited for a technical interview.
-          </p>
-        </div>
       </GlassCard>
     );
   }
@@ -476,7 +471,7 @@ const TeamApplication: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-accent-blue/10 border border-accent-blue/30 rounded-lg p-6">
+            {/* <div className="bg-accent-blue/10 border border-accent-blue/30 rounded-lg p-6">
               <h4 className="text-lg  font-sansita font-semibold text-primary-text mb-3">
                 What happens next?
               </h4>
@@ -494,7 +489,7 @@ const TeamApplication: React.FC = () => {
                   <span className=' font-sansita'>Successful candidates will join our next onboarding session</span>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         )}
 
