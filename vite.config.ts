@@ -1,11 +1,18 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import sitemap from 'vite-plugin-sitemap';
 
 export default defineConfig({
-  base: '', // ✅ Crucial for Vercel + React Router (no leading slash or './')
-  plugins: [react()],
+  base: '',
+  plugins: [react(),
+  sitemap({
+    hostname: 'https://appteam.nith.ac.in',
+    outDir: 'dist',
+    generateRobotsTxt: true
+  })
+  ],
   optimizeDeps: {
-    exclude: ['lucide-react'], // ✅ Only if needed
+    exclude: ['lucide-react'],
   },
   build: {
     outDir: 'dist',
