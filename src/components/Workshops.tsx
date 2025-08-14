@@ -28,26 +28,26 @@ const Workshops: React.FC = () => {
     }
   ];
 
-  const upcomingWorkshops = [
-    {
-      title: 'Git & Version Control Masterclass',
-      date: 'March 15, 2025',
-      time: '2:00 PM - 4:00 PM',
-      type: 'Free Workshop'
-    },
-    {
-      title: 'Introduction to Cloud Computing',
-      date: 'March 22, 2025',
-      time: '10:00 AM - 12:00 PM',
-      type: 'Free Workshop'
-    },
-    {
-      title: 'UI/UX Design Fundamentals',
-      date: 'March 29, 2025',
-      time: '3:00 PM - 5:00 PM',
-      type: 'Free Workshop'
-    }
-  ];
+  // const upcomingWorkshops = [
+  //   {
+  //     title: 'Git & Version Control Masterclass',
+  //     date: 'March 15, 2025',
+  //     time: '2:00 PM - 4:00 PM',
+  //     type: 'Free Workshop'
+  //   },
+  //   {
+  //     title: 'Introduction to Cloud Computing',
+  //     date: 'March 22, 2025',
+  //     time: '10:00 AM - 12:00 PM',
+  //     type: 'Free Workshop'
+  //   },
+  //   {
+  //     title: 'UI/UX Design Fundamentals',
+  //     date: 'March 29, 2025',
+  //     time: '3:00 PM - 5:00 PM',
+  //     type: 'Free Workshop'
+  //   }
+  // ];
 
   return (
     <section id="workshops" className="py-16 md:py-24 relative">
@@ -107,7 +107,7 @@ const Workshops: React.FC = () => {
         </div>
 
         {/* Upcoming Workshops */}
-        <GlassCard className="p-6 md:p-8">
+        {/* <GlassCard className="p-6 md:p-8">
           <div className="flex items-center space-x-3 mb-6">
             <Calendar className="w-6 h-6 text-accent-blue" />
             <h3 className="text-xl md:text-2xl font-sansita font-semibold text-white">
@@ -147,7 +147,7 @@ const Workshops: React.FC = () => {
               </div>
             ))}
           </div>
-        </GlassCard>
+        </GlassCard> */}
       </div>
     </section>
   );
