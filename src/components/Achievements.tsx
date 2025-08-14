@@ -120,10 +120,10 @@ const Achievements: React.FC = () => {
       description: "Receiving innovation awards",
     },
     {
-      id: 15,
-      image: "/IMG-7.jpg",
-      title: "Award Ceremony",
-      description: "Receiving innovation awards",
+      id: 16,
+      image:"img_16.jpg",
+      title:"Behind the scenes",
+      description: "Our amazing team together",
     }
   ];
 
@@ -303,14 +303,14 @@ const Achievements: React.FC = () => {
 
   const timeline = [
     {
-      year: "2019",
+      year: "2014",
       title: "Team Formation",
       description:
         "AppTeam was founded with a vision to excel in competitive programming and app development.",
       color: "border-accent-primary",
     },
     {
-      year: "2020",
+      year: "2016",
       title: "HackOnHills Announced",
       description:
         "Announced our first hackathon and successfully organized it, marking our entry in finding solutions to real-world problems.",

@@ -309,7 +309,7 @@ const MemberForm: React.FC<MemberFormProps> = ({ onClose, editingEmail }) => {
                   <option value="2nd">2nd Year</option>
                   <option value="3rd">3rd Year</option>
                   <option value="4th">4th Year</option>
-                  <option value="#">Alumni</option>
+                  <option value="5th">Alumni</option>
                 </select>
               </div>
               <div>

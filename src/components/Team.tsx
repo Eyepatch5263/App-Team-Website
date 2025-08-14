@@ -176,26 +176,31 @@ const Team: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex justify-end mb-6">
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as 'none' | 'role' | 'year')}
-            className="bg-tertiary-dark pr-4 text-primary-text border border-accent-primary rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent-primary"
-          >
-            <option className="bg-tertiary-dark font-sansita text-primary-text">Role</option>
-            <option className="bg-tertiary-dark font-sansita text-primary-text">Year</option>
-          </select>
-        </div>
 
         {/* No Members Fallback */}
         {sortedMembers.length === 0 ? (
           <p className="text-center font-sansita text-secondary-text">No members found.</p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-            {sortedMembers.map((member) => (
-              <MemberCard key={member._id} member={member} />
-            ))}
-          </div>
+            <>
+            {['5th','4th', '3rd'].map((year) => {
+              const yearMembers = sortedMembers.filter(
+              (member) => member.personalInfo.year === year
+              );
+              if (yearMembers.length === 0) return null;
+              return (
+              <div key={year} className="mb-10">
+                <h3 className="text-2xl font-bold mb-6 font-sansita text-accent-primary text-center">
+                {year === "5th" ? "Alumini" : year === "4th" ? "Final Year" : "3rd Year"}
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                {yearMembers.map((member) => (
+                  <MemberCard key={member._id} member={member} />
+                ))}
+                </div>
+              </div>
+              );
+            })}
+            </>
         )}
       </div>
     </section>

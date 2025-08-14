@@ -37,15 +37,15 @@ const Hero: React.FC = () => {
           {/* Stats */}
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 mb-6 sm:mb-8 md:mb-12 animate-fade-in relative z-30 px-2">
             <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-space font-bold text-accent-primary">6+</div>
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sansita font-bold text-accent-primary">10+</div>
               <div className="text-muted-text font-sansita text-xs sm:text-sm">Years Active</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-space font-bold text-accent-secondary">3</div>
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sansita font-bold text-accent-secondary">3</div>
               <div className="text-muted-text font-sansita text-xs sm:text-sm">Major Events</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-space font-bold text-accent-tertiary">40+</div>
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sansita font-bold text-accent-tertiary">40+</div>
               <div className="text-muted-text font-sansita text-xs sm:text-sm">Active Members</div>
             </div>
           </div>
