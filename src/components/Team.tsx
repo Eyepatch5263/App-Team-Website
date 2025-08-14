@@ -214,7 +214,7 @@ const Team: React.FC = () => {
           </>
         )}
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-3xl lg:text-4xl font-sansita font-bold text-primary-text mb-2">
+          <h2 className="text-3xl lg:text-4xl font-sansita font-bold text-primary-text mb-8">
             Meet Our <span className="text-accent-primary">Alumni</span>
           </h2>
           {sortedMembers.length === 0 ? (
