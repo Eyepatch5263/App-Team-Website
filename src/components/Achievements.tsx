@@ -67,7 +67,7 @@ const Achievements: React.FC = () => {
     },
     {
       id: 4,
-      image: "/WhatsApp Image 2025-06-12 at 11.47.39 AM (6).jpeg",
+      image: "/IMG-6.jpg",
       title: "Project Showcase",
       description: "Presenting our innovative projects",
     },
@@ -79,7 +79,7 @@ const Achievements: React.FC = () => {
     },
     {
       id: 7,
-      image: "/img12.jpeg",
+      image: "/img11.jpeg",
       title: "Complete Team",
       description: "Our amazing team together",
     },

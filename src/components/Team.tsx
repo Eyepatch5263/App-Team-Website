@@ -181,27 +181,67 @@ const Team: React.FC = () => {
         {sortedMembers.length === 0 ? (
           <p className="text-center font-sansita text-secondary-text">No members found.</p>
         ) : (
-            <>
-            {['5th','4th', '3rd'].map((year) => {
+          <>
+            {['4th', '3rd'].map((year) => {
               const yearMembers = sortedMembers.filter(
-              (member) => member.personalInfo.year === year
+                (member) => member.personalInfo.year === year
               );
               if (yearMembers.length === 0) return null;
               return (
-              <div key={year} className="mb-10">
-                <h3 className="text-2xl font-bold mb-6 font-sansita text-accent-primary text-center">
-                {year === "5th" ? "Alumini" : year === "4th" ? "Final Year" : "3rd Year"}
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-                {yearMembers.map((member) => (
-                  <MemberCard key={member._id} member={member} />
-                ))}
+                <div key={year} className="mb-10">
+                  <h3 className="text-2xl font-bold mb-6 font-sansita text-accent-primary text-center">
+                    {year === "4th" ? "Final Year" : "3rd Year"}
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                    {(year === "4th"
+                      ? [...yearMembers].sort((a, b) => {
+                        const order = ["Secretary", "Convenenor", "Coordinater"];
+                        const aIndex = order.indexOf(a.membershipInfo.position || "");
+                        const bIndex = order.indexOf(b.membershipInfo.position || "");
+                        if (aIndex === -1 && bIndex === -1) return 0;
+                        if (aIndex === -1) return 1;
+                        if (bIndex === -1) return -1;
+                        return aIndex - bIndex;
+                      })
+                      : yearMembers
+                    ).map((member) => (
+                      <MemberCard key={member._id} member={member} />
+                    ))}
+                  </div>
                 </div>
-              </div>
               );
             })}
-            </>
+          </>
         )}
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl lg:text-4xl font-sansita font-bold text-primary-text mb-2">
+            Meet Our <span className="text-accent-primary">Alumni</span>
+          </h2>
+          {sortedMembers.length === 0 ? (
+            <p className="text-center font-sansita text-secondary-text">No members found.</p>
+          ) : (
+            <>
+              {['5th'].map((year) => {
+                const yearMembers = sortedMembers.filter(
+                  (member) => member.personalInfo.year === year
+                );
+                if (yearMembers.length === 0) return null;
+                return (
+                  <div key={year} className="mb-10">
+                    <h3 className="text-2xl font-bold mb-6 font-sansita text-accent-primary text-center">
+                      {year === "5th" ? "Alumni" : ""}
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                      {yearMembers.map((member) => (
+                        <MemberCard key={member._id} member={member} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </>
+          )}
+        </div>
       </div>
     </section>
   );
