@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
           
           <h1 className="break-words leading-tight pt-6 text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl  font-sansita font-bold text-primary-text mb-3 sm:mb-4 md:mb-6 animate-fade-in relative z-30">
             App Team
-            <span className="block text-transparent mt-4 bg-clip-text bg-purple-500">
+            <span className="block text-transparent mt-4 bg-clip-text bg-blue-500">
               NIT Hamirpur
             </span>
           </h1>
