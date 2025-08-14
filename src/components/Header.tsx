@@ -23,6 +23,7 @@ const Header: React.FC = () => {
     { href: '#workshops', label: 'Workshops' },
     { href: '#achievements', label: 'Achievements' },
     { href: '#team', label: 'Team' },
+    {href:"#join-team",label:"Apply Now"},
     { href: '#connect', label: 'Connect' },
   ];
 
