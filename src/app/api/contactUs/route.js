@@ -18,7 +18,7 @@ export async function POST(req) {
     await Contact.create({ name, email, query });
 
     return NextResponse.json(
-      { success: true, message: "Your query was sent, we'll respond to it as soon as possible on your mentioned email" },
+      { success: true, message: "Your query was sent, we will respond to it as soon as possible on your mentioned email" },
       { status: 201 }
     );
   } catch (err) {

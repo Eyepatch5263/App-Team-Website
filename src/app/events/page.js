@@ -1,11 +1,13 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import { Ubuntu } from "next/font/google";
+import Image from 'next/image';
 
 const ubuntu = Ubuntu({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
 });
+
 const Events = () => {
   const observerRef = useRef(null);
 
@@ -83,7 +85,7 @@ const Events = () => {
             HACK ON HILLS 6.0
           </h2>
           <p className="fade-in text-lg md:text-xl leading-relaxed max-w-4xl mx-auto mb-12 text-purple-200 text-justify">
-            HackonHills 6.0, organized by our App Team at NIT Hamirpur, was a landmark event that brought together innovators, developers, and tech enthusiasts from across the region. As North India's largest hackathon, it featured 36 hours of nonstop coding, problem-solving, and collaboration. From ideation to execution, our team led the entire initiative—creating an environment where creativity thrived and groundbreaking solutions came to life.
+            HackonHills 6.0, organized by our App Team at NIT Hamirpur, was a landmark event that brought together innovators, developers, and tech enthusiasts from across the region. As North India&apos;s largest hackathon, it featured 36 hours of nonstop coding, problem-solving, and collaboration. From ideation to execution, our team led the entire initiative—creating an environment where creativity thrived and groundbreaking solutions came to life.
           </p>
         </div>
 
@@ -101,10 +103,12 @@ const Events = () => {
               }}
               data-delay={image.delay}
             >
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-400 hover:scale-110"
+                fill
+                className="object-cover transition-transform duration-400 hover:scale-110"
+                sizes="(max-width: 768px) 320px, 500px"
               />
             </div>
           ))}
@@ -114,13 +118,15 @@ const Events = () => {
             {hackOnHillsImages.map((image, index) => (
               <div
                 key={`hoh-mobile-${index}`}
-                className="image-item fade-in w-80 h-44 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 scale-90"
+                className="image-item fade-in w-80 h-44 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 scale-90 relative"
                 data-delay={image.delay}
               >
-                <img
+                <Image
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-400 hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-400 hover:scale-110"
+                  sizes="320px"
                 />
               </div>
             ))}
@@ -133,7 +139,7 @@ const Events = () => {
             NIMBUS 2K25
           </h2>
           <p className="fade-in text-lg md:text-xl leading-relaxed max-w-4xl mx-auto mb-12 text-purple-200 text-justify">
-            At Nimbus 2K25, our App Team proudly played a key role—not just as participants, but as contributors to the event's digital success. We developed the official Nimbus app, designed to enhance the user experience and streamline event interactions for thousands of attendees. Our efforts were recognized with the prestigious title of "Best Innovation Team", a testament to our commitment to building smart, impactful solutions that elevate the tech culture at NIT Hamirpur.
+            At Nimbus 2K25, our App Team proudly played a key role—not just as participants, but as contributors to the event&apos;s digital success. We developed the official Nimbus app, designed to enhance the user experience and streamline event interactions for thousands of attendees. Our efforts were recognized with the prestigious title of &quot;Best Innovation Team&quot;, a testament to our commitment to building smart, impactful solutions that elevate the tech culture at NIT Hamirpur.
           </p>
         </div>
 
@@ -151,10 +157,12 @@ const Events = () => {
               }}
               data-delay={image.delay}
             >
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-400 hover:scale-110"
+                fill
+                className="object-cover transition-transform duration-400 hover:scale-110"
+                sizes="(max-width: 768px) 320px, 500px"
               />
             </div>
           ))}
@@ -164,13 +172,15 @@ const Events = () => {
             {nimbusImages.map((image, index) => (
               <div
                 key={`nimbus-mobile-${index}`}
-                className="image-item fade-in w-80 h-44 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 scale-90"
+                className="image-item fade-in w-80 h-44 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 scale-90 relative"
                 data-delay={image.delay}
               >
-                <img
+                <Image
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-400 hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-400 hover:scale-110"
+                  sizes="320px"
                 />
               </div>
             ))}

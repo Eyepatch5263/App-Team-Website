@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 const NewMemberForm = () => {
   const [formData, setFormData] = useState({
@@ -176,7 +177,7 @@ const NewMemberForm = () => {
     >
       <div className="form-card rounded-3xl p-10 w-full max-w-md border-2 border-white/15 shadow-2xl relative">
         <h1 className="text-center text-white text-2xl font-semibold mb-8 text-shadow">
-          Team Member's Details
+          Team Member&apos;s Details
         </h1>
 
         {error && (
@@ -191,14 +192,15 @@ const NewMemberForm = () => {
           </div>
         )}
 
-        <div>
+        <form onSubmit={handleSubmit}>
           {/* Name */}
           <div className="mb-6">
-            <label className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
+            <label htmlFor="name" className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
               Full Name <span className="text-red-400">*</span>
             </label>
             <input
               type="text"
+              id="name"
               name="name"
               value={formData.name}
               onChange={handleInputChange}
@@ -214,10 +216,11 @@ const NewMemberForm = () => {
 
           {/* Position */}
           <div className="mb-6">
-            <label className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
+            <label htmlFor="role" className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
               Position <span className="text-red-400">*</span>
             </label>
             <select
+              id="role"
               name="role"
               value={formData.role}
               onChange={handleInputChange}
@@ -229,7 +232,7 @@ const NewMemberForm = () => {
               required
             >
               <option value="" disabled>
-                What's your position
+                What&apos;s your position
               </option>
               <option value="Alumni">Alumni</option>
               <option value="Club Secretary">Club Secretary</option>
@@ -242,11 +245,12 @@ const NewMemberForm = () => {
 
           {/* Bio */}
           <div className="mb-6">
-            <label className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
+            <label htmlFor="bio" className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
               Tell a little about yourself
             </label>
             <input
               type="text"
+              id="bio"
               name="bio"
               value={formData.bio}
               onChange={handleInputChange}
@@ -257,11 +261,12 @@ const NewMemberForm = () => {
 
           {/* GitHub */}
           <div className="mb-6">
-            <label className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
+            <label htmlFor="githubURL" className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
               Github Link 🔗 <span className="text-red-400">*</span>
             </label>
             <input
-              type="text"
+              type="url"
+              id="githubURL"
               name="githubURL"
               value={formData.githubURL}
               onChange={handleInputChange}
@@ -277,11 +282,12 @@ const NewMemberForm = () => {
 
           {/* LinkedIn */}
           <div className="mb-6">
-            <label className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
+            <label htmlFor="linkedInURL" className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
               LinkedIn Link 🔗 <span className="text-red-400">*</span>
             </label>
             <input
               type="url"
+              id="linkedInURL"
               name="linkedInURL"
               value={formData.linkedInURL}
               onChange={handleInputChange}
@@ -297,7 +303,7 @@ const NewMemberForm = () => {
 
           {/* Profile Image */}
           <div className="mb-6">
-            <label className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
+            <label htmlFor="profile-image" className="block text-gray-200 text-sm font-medium mb-2 uppercase tracking-wide">
               Profile Image
             </label>
             <div className="relative">
@@ -333,11 +339,15 @@ const NewMemberForm = () => {
             {/* Image Preview */}
             {previewImage && (
               <div className="mt-3 text-center">
-                <img
-                  src={previewImage}
-                  alt="Preview"
-                  className="max-w-32 max-h-32 rounded-xl border-2 border-white/20 object-cover mx-auto"
-                />
+                <div className="relative w-32 h-32 mx-auto">
+                  <Image
+                    src={previewImage}
+                    alt="Profile preview"
+                    fill
+                    className="rounded-xl border-2 border-white/20 object-cover"
+                    sizes="128px"
+                  />
+                </div>
               </div>
             )}
           </div>
@@ -345,13 +355,12 @@ const NewMemberForm = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            onClick={handleSubmit}
             disabled={isSubmitting || isUploading}
             className="w-full py-4 bg-gradient-to-r from-blue-400 to-purple-600 border-none rounded-xl text-white text-base font-semibold uppercase tracking-wide mt-3 cursor-pointer transition-all duration-300 hover:from-blue-500 hover:to-purple-700 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Submitting..." : "Join the Team"}
           </button>
-        </div>
+        </form>
       </div>
 
       <style jsx>{`
