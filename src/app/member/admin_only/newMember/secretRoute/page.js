@@ -136,6 +136,7 @@ const NewMemberForm = () => {
         setError(errorData.message || "Failed to submit form");
       }
     } catch (err) {
+      console.log(`Error: ${err}`);
       setError("Network error. Please try again.");
     } finally {
       setIsSubmitting(false);

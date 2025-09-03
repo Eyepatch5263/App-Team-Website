@@ -125,7 +125,7 @@ const Navbar = () => {
           <ul
             className={`${
               isMenuOpen ? "flex" : "hidden"
-            } md:hidden list-none flex-col gap-5 mt-6 p-5 bg-purple-950/98 navbar-blur border border-indigo-500/30 rounded-2xl shadow-lg shadow-indigo-500/30`}
+            } md:hidden list-none flex-col gap-5 mt-6 p-5 bg-[#140b29] navbar-blur`}
           >
             {[
               { href: "/member", text: "Our Team" },

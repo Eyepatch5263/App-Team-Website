@@ -94,11 +94,11 @@ const Events = () => {
           {hackOnHillsImages.map((image, index) => (
             <div
               key={`hoh-${index}`}
-              className={`image-item fade-in absolute w-80 md:w-[500px] h-48 md:h-52 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 scale-90 hover:scale-105 hover:-translate-y-3 hover:shadow-3xl ${
+              className={`image-item fade-in absolute w-80 md:w-[500px] h-48 md:h-52 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 hover:shadow-3xl ${
                 index % 2 === 0 ? 'left-[5%]' : 'right-[5%]'
               } md:block hidden`}
               style={{ 
-                top: `${10 + index * 110}px`,
+                top: `${10 + index * 100}px`,
                 marginTop: '0'
               }}
               data-delay={image.delay}
@@ -107,7 +107,7 @@ const Events = () => {
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover transition-transform duration-400 hover:scale-110"
+                className="object-cover"
                 sizes="(max-width: 768px) 320px, 500px"
               />
             </div>
@@ -125,7 +125,7 @@ const Events = () => {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover transition-transform duration-400 hover:scale-110"
+                  className="object-cover"
                   sizes="320px"
                 />
               </div>
@@ -148,11 +148,11 @@ const Events = () => {
           {nimbusImages.map((image, index) => (
             <div
               key={`nimbus-${index}`}
-              className={`image-item fade-in absolute w-80 md:w-[500px] h-48 md:h-52 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 scale-90 hover:scale-105 hover:-translate-y-3 hover:shadow-3xl ${
+              className={`image-item fade-in absolute w-80 md:w-[500px] h-48 md:h-52 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 hover:shadow-3xl ${
                 index % 2 === 0 ? 'left-[5%]' : 'right-[5%]'
               } md:block hidden`}
               style={{ 
-                top: `${10 + index * 110}px`,
+                top: `${10 + index * 100}px`,
                 marginTop: '0'
               }}
               data-delay={image.delay}
@@ -161,7 +161,7 @@ const Events = () => {
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover transition-transform duration-400 hover:scale-110"
+                className="object-cover"
                 sizes="(max-width: 768px) 320px, 500px"
               />
             </div>
@@ -179,7 +179,7 @@ const Events = () => {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover transition-transform duration-400 hover:scale-110"
+                  className="object-cover"
                   sizes="320px"
                 />
               </div>

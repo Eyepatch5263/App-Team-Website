@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AppTeam Web  
 
-## Getting Started
+A full-stack web application built with the **MERN stack** (MongoDB, Express.js, React, Node.js) and styled with **Tailwind CSS**.  
+The project is split into two parts:  
 
-First, run the development server:
+- **Frontend** (`frontend/`) → React (Vite) + Tailwind + Nginx  
+- **Backend** (`backend/`) → Node.js + Express + MongoDB  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Both frontend and backend include **Dockerfiles** for containerized deployment.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📂 Project Structure  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+appTeam_web/
+├── backend/              # Express + MongoDB backend
+│   ├── models/           # Mongoose schemas
+│   ├── routes/           # API routes
+│   ├── app.js            # Main server file
+│   ├── connection.js     # DB connection config
+│   ├── Dockerfile
+│   └── package.json
+│
+├── frontend/             # React + Vite + Tailwind frontend
+│   ├── public/           
+│   ├── src/              # React components & pages
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   ├── Dockerfile
+│   └── package.json
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Features  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Backend (Express + MongoDB)**  
+  - RESTful API architecture  
+  - Models & routes separated for clean structure  
+  - MongoDB connection via `connection.js`  
+  - Dockerized for deployment  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Frontend (React + Vite + Tailwind)**  
+  - Fast Vite bundling  
+  - TailwindCSS styling  
+  - Configured with PostCSS and ESLint  
+  - Nginx configuration for serving in production  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚡ Getting Started  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 1. Clone the repository  
+git clone https://github.com/ayush00git/appTeam_web.git
+cd appTeam_web
+
+### 2. Setup Backend  
+cd backend
+npm install
+# add your MongoDB URI in connection.js or as ENV variable
+npm start
+
+### 3. Setup Frontend  
+cd frontend
+npm install
+npm run dev   # starts development server
+
+---
+
+## 🐳 Run with Docker  
+
+Each service has its own `Dockerfile`. You can build and run them separately:  
+
+# Backend
+cd backend
+docker build -t appteam-backend .
+docker run -p 5000:5000 appteam-backend
+
+# Frontend
+cd frontend
+docker build -t appteam-frontend .
+docker run -p 3000:3000 appteam-frontend
+
+Or you can add a `docker-compose.yml` later to orchestrate both.  
+
+---
+
+## ⚙️ Environment Variables  
+
+Create a `.env` file inside `backend/` with:  
+
+MONGO_URI=<your-mongodb-uri>
+PORT=5000
+
+(Optional for frontend if you use APIs)  
+
+---
+
+## 📜 Scripts  
+
+### Backend  
+- `npm start` → start Express server  
+- `npm run dev` → (if nodemon configured) run in dev mode  
+
+### Frontend  
+- `npm run dev` → start Vite dev server  
+- `npm run build` → build production bundle  
+- `npm run preview` → preview production build  
+
+---
+
+## 🛠 Tech Stack  
+
+- **Frontend:** React, Vite, TailwindCSS  
+- **Backend:** Node.js, Express.js, MongoDB, Mongoose  
+- **Deployment:** Docker  
+
+---
+
+## 🤝 Contributing  
+
+1. Fork this repo  
+2. Create your feature branch (`git checkout -b feature-name`)  
+3. Commit changes (`git commit -m "Add feature"`)  
+4. Push to branch (`git push origin feature-name`)  
+5. Open a Pull Request  
+
+---

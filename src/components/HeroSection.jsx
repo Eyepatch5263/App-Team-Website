@@ -17,7 +17,7 @@ const ubuntu = Ubuntu({
 function HeroSection() {
   const router = useRouter();
   const goToProject = () => router.push("/projects");
-  const goToMember = () => router.push("/members");
+  const goToMember = () => router.push("/member");
 
   return (
     <section
