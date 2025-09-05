@@ -112,7 +112,7 @@ const NewMemberForm = () => {
       formDataToSend.append("profileImageURL", formData.profileImageURL);
 
       const response = await fetch(
-        `/api/member/admin_only/newMember/secretRoute`,
+        `/api/member/admin_only/newMember`,
         {
           method: "POST",
           body: formDataToSend,
