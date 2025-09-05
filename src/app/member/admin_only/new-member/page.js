@@ -112,7 +112,7 @@ const NewMemberForm = () => {
       formDataToSend.append("profileImageURL", formData.profileImageURL);
 
       const response = await fetch(
-        `/api/member/admin_only/newMember/secretRoute`,
+        `/api/member/admin_only/newMember`,
         {
           method: "POST",
           body: formDataToSend,
@@ -136,6 +136,7 @@ const NewMemberForm = () => {
         setError(errorData.message || "Failed to submit form");
       }
     } catch (err) {
+      console.log(`Error: ${err}`);
       setError("Network error. Please try again.");
     } finally {
       setIsSubmitting(false);

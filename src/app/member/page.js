@@ -232,7 +232,7 @@ const OurTeam = () => {
         </button>
 
         {categorizedMembers.map((category) => (
-          <div key={category.title} className="mb-16">
+          <div key={category.title} className="mb-32">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 section-title">
                 {category.title}

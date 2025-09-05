@@ -6,6 +6,7 @@ const ubuntu = Ubuntu({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
 });
+
 const WhatWeDo = () => {
   const [activeSection, setActiveSection] = useState(0);
   
@@ -43,9 +44,12 @@ const WhatWeDo = () => {
     }
   }, []);
 
-  // Scroll handler for section detection
+  // Scroll handler for section detection (desktop only)
   useEffect(() => {
     const handleScroll = () => {
+      // Only enable scroll detection on desktop
+      if (window.innerWidth < 1024) return;
+      
       const sectionElements = document.querySelectorAll('.content-section');
       const windowHeight = window.innerHeight;
       let newActiveSection = 0;
@@ -85,13 +89,61 @@ const WhatWeDo = () => {
       `}</style>
 
       <div className="bg-[#140b29]">
-        <div className="flex flex-col lg:flex-row items-start">
+        {/* Mobile Layout */}
+        <div className="lg:hidden">
+          {/* Mobile Header */}
+          <div className="py-12 px-6 text-center">
+            <h1 
+              className="gasoek-font font-normal text-[#a594f9] tracking-wide uppercase leading-tight"
+              style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)' }}
+            >
+              WHAT WE DO
+            </h1>
+          </div>
+
+          {/* Mobile Content Sections */}
+          <div className="px-6 pb-12">
+            {sectionsData.current.map((section, index) => (
+              <div 
+                key={section.id}
+                className={`${ubuntu.className} mb-8 last:mb-0`}
+              >
+                <h2 className="text-2xl font-bold mb-4 text-[#a594f9] leading-tight">
+                  {section.title}
+                </h2>
+                <p className="text-base leading-relaxed text-gray-200 mb-6 font-normal">
+                  {section.description}
+                </p>
+                <a 
+                  href={section.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#a594f9] hover:text-purple-200 transition-colors inline-flex items-center group text-sm font-medium"
+                >
+                  <span className="mr-2">
+                    {section.id === 'hack-on-hills' ? 'HACKONHILLS-7.0' : 
+                     section.id === 'nimbus-app' ? 'Nimbus-2k25' : 'Hillfair-2k24'}
+                  </span>
+                  <span className="transform group-hover:translate-x-2 transition-transform">→</span>
+                </a>
+                
+                {/* Divider line for mobile */}
+                {index < sectionsData.current.length - 1 && (
+                  <div 
+                    className="w-full h-0.5 mt-8"
+                    style={{ background: 'linear-gradient(90deg, #a594f9 0%, transparent 100%)' }}
+                  ></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden lg:flex lg:flex-row items-start">
           {/* Left Panel - Sticky */}
           <div className="lg:sticky lg:top-0 lg:w-1/2 h-screen flex items-center justify-center bg-[#140b29] flex-shrink-0 z-10">
             <div className="relative w-80 h-[420px] flex items-center justify-center">
-              {/* Purple shape background */}
-              {/* <div className="absolute w-80 h-[420px] bg-purple-300 purple-shape -rotate-12 z-10"></div> */}
-              
               {/* Stacked images */}
               {sectionsData.current.map((section, idx) => (
                 <img

@@ -156,7 +156,7 @@ const OurDomains = () => {
             {domains.map((domain, index) => (
               <div 
                 key={index}
-                className="domain-card relative rounded-2xl overflow-hidden shadow-2xl h-64 transition-all duration-500 hover:-translate-y-3 hover:scale-105 hover:shadow-3xl group"
+                className="domain-card relative rounded-2xl overflow-hidden shadow-2xl h-64 transition-all duration-300 hover:-translate-y-2 hover:scale-100 hover:shadow-3xl group"
                 data-delay={index * 100}
                 onClick={() => setSelectedDomain(domain)}
               >
