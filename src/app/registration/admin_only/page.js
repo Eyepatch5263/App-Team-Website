@@ -326,7 +326,7 @@ const RegistrationsMap = () => {
                   <div className="flex-1">
                     <h3 className="text-white font-bold text-xl mb-1">{registration.name}</h3>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getBranchColor(registration.branch)} border`}>
+                      <span className={`inline-block px-3 py-1 rounded-full text-xs text-white font-medium bg-gradient-to-r ${getBranchColor(registration.branch)} border`}>
                         {registration.branch}
                       </span>
                       <span className="text-purple-300 text-sm">
