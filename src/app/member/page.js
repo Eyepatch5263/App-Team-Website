@@ -224,13 +224,6 @@ const OurTeam = () => {
           </p>
         </section>
 
-        <button
-          className="submit-btn block mb-10 w-full py-4 px-6 bg-gradient-to-r from-purple-500 to-purple-700 border-none rounded-xl text-white text-lg font-semibold cursor-pointer transition-all duration-300 mt-5 hover:from-purple-700 hover:to-purple-900 hover:-translate-y-1 hover:shadow-2xl active:translate-y-0"
-          onClick={goToAdminOnly}
-        >
-          Members Click Here
-        </button>
-
         {categorizedMembers.map((category) => (
           <div key={category.title} className="mb">
             <div className="text-center mb-12">
