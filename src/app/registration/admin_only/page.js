@@ -18,7 +18,9 @@ const RegistrationsMap = () => {
   const [sortBy, setSortBy] = useState('newest');
   const router = useRouter();
 
-  const branches = ['All', 'CSE', 'ECE', 'EEE', 'MECH', 'CIVIL', 'IT', 'CHEM', 'AERO', 'BIOTEC', 'OTHER'];
+  const branches = [
+    'CSE', 'ECE', 'DEC', 'MECH', 'CIVIL', 'EP', 'CHEMICAL', 'DCS', 'ARCHI', 'MS', 'MNC'
+  ];
 
   const goToRegistration = () => {
     router.push("/newRegistration");
