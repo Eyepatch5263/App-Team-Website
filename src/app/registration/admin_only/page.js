@@ -19,7 +19,7 @@ const RegistrationsMap = () => {
   const router = useRouter();
 
   const branches = [
-    'CSE', 'ECE', 'DEC', 'MECH', 'CIVIL', 'EP', 'CHEMICAL', 'DCS', 'ARCHI', 'MS', 'MNC'
+    'CSE', 'ECE', 'DEC', 'MECH', 'EE', 'CIVIL', 'EP', 'CHEMICAL', 'DCS', 'ARCHI', 'MS', 'MNC'
   ];
 
   const goToRegistration = () => {

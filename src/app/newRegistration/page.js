@@ -27,7 +27,7 @@ const RegistrationForm = () => {
   const router = useRouter();
 
   const branches = [
-    'CSE', 'ECE', 'DEC', 'MECH', 'CIVIL', 'EP', 'CHEMICAL', 'DCS', 'ARCHI', 'MS', 'MNC'
+    'CSE', 'ECE', 'DEC', 'MECH', 'CIVIL', 'EE', 'EP', 'CHEMICAL', 'DCS', 'ARCHI', 'MS', 'MNC'
   ];
 
   const handleInputChange = (e) => {
