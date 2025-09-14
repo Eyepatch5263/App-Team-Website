@@ -209,15 +209,38 @@ const RegistrationsMap = () => {
           <h1 className="text-center text-white text-3xl font-semibold mb-6 text-shadow">
             Student Registrations
           </h1>
-          <button 
-            onClick={goToRegistration}
-            className="py-4 px-8 bg-[#231446] border-2 border-[#a594f9] rounded-xl text-white text-sm font-semibold uppercase tracking-wide cursor-pointer transition-all duration-300 hover:bg-[#9d8bfa] flex items-center gap-2"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-            </svg>
-            New Registration
-          </button>
+          <div className="flex flex-col md:flex-row gap-4 items-center">
+            <button 
+              onClick={goToRegistration}
+              className="py-4 px-8 bg-[#231446] border-2 border-[#a594f9] rounded-xl text-white text-sm font-semibold uppercase tracking-wide cursor-pointer transition-all duration-300 hover:bg-[#9d8bfa] flex items-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+              New Registration
+            </button>
+            <button
+              onClick={() => {
+                fetch('/api/registration/export')
+                  .then(res => res.blob())
+                  .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'registrations.xlsx';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                  });
+              }}
+              className="py-4 px-8 bg-green-700 border-2 border-green-400 rounded-xl text-white text-sm font-semibold uppercase tracking-wide cursor-pointer transition-all duration-300 hover:bg-green-800 flex items-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+              Export to Excel
+            </button>
+          </div>
         </div>
 
         {/* Stats Cards */}
