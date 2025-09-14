@@ -6,6 +6,7 @@ const branches = [
   "DEC",
   "MECH",
   "CIVIL",
+  "EE",
   "EP",
   "CHEMICAL",
   "DCS",
