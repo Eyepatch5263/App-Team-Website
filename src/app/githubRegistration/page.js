@@ -30,7 +30,7 @@ const RegistrationForm = () => {
   ];
 
   const genderOptions = [
-    'Male', 'Female', 'Other', 'Prefer not to say'
+    'Male', 'Female'
   ];
 
   const handleInputChange = (e) => {
@@ -106,7 +106,7 @@ const RegistrationForm = () => {
     setLoading(true);
     
     try {
-      const response = await fetch('/api/newRegistration', {
+      const response = await fetch('/api/githubRegistration', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -129,12 +129,6 @@ const RegistrationForm = () => {
         branch: '',
         gender: ''
       });
-      
-      // Redirect after 2 seconds
-      setTimeout(() => {
-        router.push('/registration'); // or wherever you want to redirect
-      }, 2000);
-      
     } catch (err) {
       setError(err.message || 'Registration failed. Please try again.');
       console.error('Registration error:', err);
@@ -155,6 +149,9 @@ const RegistrationForm = () => {
           <h1 className="text-center text-white text-3xl font-semibold mb-6 text-shadow">
             GitHub Workshop Registration
           </h1>
+          {/* <h3 className='text-center text-gray-500 text-xl font-semibold mb-6 text-shadow'>
+              27 September 2025, Saturday
+          </h3> */}
           <button 
             onClick={goBack}
             className="py-3 px-6 bg-[#231446] border-2 border-[#a594f9] rounded-xl text-white text-sm font-semibold uppercase tracking-wide cursor-pointer transition-all duration-300 hover:bg-[#9d8bfa] flex items-center gap-2"
@@ -176,6 +173,17 @@ const RegistrationForm = () => {
               <span className="font-semibold">Registered!</span>
             </div>
             <p>{success}</p>
+            <div className="mt-4">
+              <p className="text-green-200 mb-2">Join our WhatsApp group for further updates:</p>
+              <a
+                href="https://chat.whatsapp.com/FB5aC19jwwoD7wZEPwWQvO"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block py-2 px-6 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow transition-all duration-200"
+              >
+                Join WhatsApp Group
+              </a>
+            </div>
           </div>
         )}
 
