@@ -17,7 +17,7 @@ const ubuntu = Ubuntu({
 function HeroSection() {
   const router = useRouter();
   const goToProject = () => router.push("/projects");
-  const goToMember = () => router.push("/newRegistration");
+  const goToGithub = () => router.push("/githubRegistration");
 
   return (
     <section
@@ -71,9 +71,9 @@ function HeroSection() {
           </button>
           <button
             className="border-2 border-[#a594f9] text-[#a594f9] px-8 py-4 rounded-full cursor-pointer font-semibold text-lg hover:bg-[#a594f9] hover:text-[#140b29] transform hover:scale-105 transition-all duration-300"
-            onClick={goToMember}
+            onClick={goToGithub}
           >
-            Join Our Team
+            Github Workshop
           </button>
         </motion.div>
       </div>
