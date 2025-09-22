@@ -95,6 +95,7 @@ const Navbar = () => {
                 { href: "/projects", text: "Projects" },
                 { href: "/contactUs", text: "Contact Us" },
                 { href: "/announcements", text: "Announcements" },
+                { href: "/registration", text: "Registrations" },
               ].map((link, index) => (
                 <li key={index}>
                   <a
@@ -134,6 +135,7 @@ const Navbar = () => {
               { href: "/projects", text: "Projects" },
               { href: "/contactUs", text: "Contact Us" },
               { href: "/announcements", text: "Announcements" },
+              { href: "/registration", text: "Registrations" },
             ].map((link, index) => (
               <li key={index}>
                 <a
