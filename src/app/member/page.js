@@ -76,14 +76,6 @@ const OurTeam = () => {
     };
   }, [members]);
 
-  const handleCardMouseEnter = (e) => {
-    e.currentTarget.style.zIndex = "10";
-  };
-
-  const handleCardMouseLeave = (e) => {
-    e.currentTarget.style.zIndex = "1";
-  };
-
   const categorizeMembers = () => {
     const categories = {
       alumni: { title: "Alumni", members: [], priority: 1 },
@@ -119,20 +111,14 @@ const OurTeam = () => {
   const renderMemberCard = (member, index, globalIndex) => (
     <div
       key={member.id || `${member.name}-${index}`}
-      className="team-card bg-gradient-to-br from-white/5 to-white/2 rounded-3xl p-8 text-center relative overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-500 cursor-pointer opacity-0 translate-y-12 scale-90"
-      style={{
-        animationDelay: `${globalIndex * 0.1}s`,
-      }}
-      onMouseEnter={handleCardMouseEnter}
-      onMouseLeave={handleCardMouseLeave}
+      className="team-card bg-gradient-to-br from-white/5 to-white/2 rounded-3xl p-8 text-center relative overflow-hidden backdrop-blur-sm border-2 border-white/10 cursor-auto"
     >
-      <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-500 shine-effect"></div>
 
-      <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden relative border-4 border-transparent bg-gradient-to-r from-blue-400 to-purple-600 p-1 transition-all duration-300 member-image">
+      <div className="w-full mx-auto mb-6 overflow-hidden rounded-2xl relative transition-all duration-300 member-image">
         <img
           src={member.profileImageURL}
           alt={member.name}
-          className="w-full h-full object-cover rounded-full transition-transform duration-300"
+          className="w-full h-full rounded-2xl object-cover transition-transform duration-300"
         />
       </div>
 
@@ -154,7 +140,6 @@ const OurTeam = () => {
             rel="noopener noreferrer"
             className="social-link w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center transition-all duration-300 border border-white/10 relative overflow-hidden hover:-translate-y-1 hover:scale-110"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 opacity-0 transition-opacity duration-300"></div>
             <svg
               className="w-5 h-5 fill-white relative z-10 transition-all duration-300"
               viewBox="0 0 24 24"
@@ -170,7 +155,6 @@ const OurTeam = () => {
             rel="noopener noreferrer"
             className="social-link w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center transition-all duration-300 border border-white/10 relative overflow-hidden hover:-translate-y-1 hover:scale-110"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 opacity-0 transition-opacity duration-300"></div>
             <svg
               className="w-5 h-5 fill-white relative z-10 transition-all duration-300"
               viewBox="0 0 24 24"
