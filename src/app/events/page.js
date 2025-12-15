@@ -54,13 +54,13 @@ const Events = () => {
     };
   }, []);
 
-  const hackOnHillsImages = [
-    { src: '/events/hoh/HOH1.webp', alt: 'HackOnHills Event 1', delay: '100' },
-    { src: '/events/hoh/HOH2.webp', alt: 'HackOnHills Event 2', delay: '200' },
-    { src: '/events/hoh/HOH3.webp', alt: 'HackOnHills Event 3', delay: '300' },
-    { src: '/events/hoh/HOH4.webp', alt: 'HackOnHills Event 4', delay: '400' },
-    { src: '/events/hoh/HOH5.webp', alt: 'HackOnHills Event 5', delay: '500' },
-    { src: '/events/hoh/HOH6.webp', alt: 'HackOnHills Event 6', delay: '600' },
+  const hackOnHills6Images = [
+    { src: '/events/hoh6/HOH1.webp', alt: 'HackOnHills Event 1', delay: '100' },
+    { src: '/events/hoh6/HOH2.webp', alt: 'HackOnHills Event 2', delay: '200' },
+    { src: '/events/hoh6/HOH3.webp', alt: 'HackOnHills Event 3', delay: '300' },
+    { src: '/events/hoh6/HOH4.webp', alt: 'HackOnHills Event 4', delay: '400' },
+    { src: '/events/hoh6/HOH5.webp', alt: 'HackOnHills Event 5', delay: '500' },
+    { src: '/events/hoh6/HOH6.webp', alt: 'HackOnHills Event 6', delay: '600' },
   ];
 
   const nimbusImages = [
@@ -72,6 +72,14 @@ const Events = () => {
     { src: '/events/nimbus/NBS6.webp', alt: 'Nimbus Event 6', delay: '600' },
   ];
 
+  const hackOnHills7Images = [
+    { src: '/events/hoh7/HOH1.webp', alt: 'HackOnHills Event 1', delay: '100' },
+    { src: '/events/hoh7/HOH2.webp', alt: 'HackOnHills Event 2', delay: '200' },
+    { src: '/events/hoh7/HOH3.webp', alt: 'HackOnHills Event 3', delay: '300' },
+    { src: '/events/hoh7/HOH4.webp', alt: 'HackOnHills Event 4', delay: '400' },
+    { src: '/events/hoh7/HOH5.webp', alt: 'HackOnHills Event 5', delay: '500' },
+    { src: '/events/hoh7/HOH6.webp', alt: 'HackOnHills Event 6', delay: '600' },
+  ];
   return (
     <div className={`${ubuntu.className} font-sans leading-relaxed text-white select-none min-h-screen`} style={{ backgroundColor: '#140b29' }}>
       <div className="max-w-6xl mx-auto px-8 py-8 relative">
@@ -79,19 +87,18 @@ const Events = () => {
           EVENTS
         </h1>
 
-        {/* HackOnHills Section */}
+        {/* HackOnHills-7.0 Section */}
         <div className="text-center mb-16">
           <h2 className="fade-in text-3xl md:text-5xl font-semibold mb-6 text-purple-300 uppercase tracking-wider">
-            HACK ON HILLS 6.0
+            HACK ON HILLS 7.0
           </h2>
           <p className="fade-in text-lg md:text-xl leading-relaxed max-w-4xl mx-auto mb-12 text-purple-200 text-justify">
-            HackonHills 6.0, organized by our App Team at NIT Hamirpur, was a landmark event that brought together innovators, developers, and tech enthusiasts from across the region. As North India&apos;s largest hackathon, it featured 36 hours of nonstop coding, problem-solving, and collaboration. From ideation to execution, our team led the entire initiative—creating an environment where creativity thrived and groundbreaking solutions came to life.
-          </p>
+HackonHills 7.0, organized by the App Team at NIT Hamirpur, continued the HackonHills legacy by bringing together students and developers for 36 hours of focused coding and collaboration. Participants worked on real-world problem statements, sharing ideas and building practical solutions in a supportive and engaging environment. The event was planned and executed entirely by our team, ensuring a smooth and productive hackathon experience for everyone involved.          </p>
         </div>
 
-        {/* HackOnHills Images */}
+        {/* HackOnHills-7.0 Images */}
         <div className="relative min-h-screen mb-4 md:min-h-[140vh]">
-          {hackOnHillsImages.map((image, index) => (
+          {hackOnHills7Images.map((image, index) => (
             <div
               key={`hoh-${index}`}
               className={`image-item fade-in absolute w-80 md:w-[500px] h-48 md:h-52 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 hover:shadow-3xl ${
@@ -113,9 +120,64 @@ const Events = () => {
             </div>
           ))}
           
-          {/* Mobile Layout for HackOnHills */}
+          {/* Mobile Layout for HackOnHills-7.0 */}
           <div className="md:hidden flex flex-col items-center gap-5">
-            {hackOnHillsImages.map((image, index) => (
+            {hackOnHills7Images.map((image, index) => (
+              <div
+                key={`hoh-mobile-${index}`}
+                className="image-item fade-in w-80 h-44 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 scale-90 relative"
+                data-delay={image.delay}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                  sizes="320px"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+
+        {/* HackOnHills-6.0 Section */}
+        <div className="text-center mb-16">
+          <h2 className="fade-in text-3xl md:text-5xl font-semibold mb-6 text-purple-300 uppercase tracking-wider">
+            HACK ON HILLS 6.0
+          </h2>
+          <p className="fade-in text-lg md:text-xl leading-relaxed max-w-4xl mx-auto mb-12 text-purple-200 text-justify">
+            HackonHills 6.0, organized by our App Team at NIT Hamirpur, was a landmark event that brought together innovators, developers, and tech enthusiasts from across the region. As North India&apos;s largest hackathon, it featured 36 hours of nonstop coding, problem-solving, and collaboration. From ideation to execution, our team led the entire initiative—creating an environment where creativity thrived and groundbreaking solutions came to life.
+          </p>
+        </div>
+
+        {/* HackOnHills-6.0 Images */}
+        <div className="relative min-h-screen mb-4 md:min-h-[140vh]">
+          {hackOnHills6Images.map((image, index) => (
+            <div
+              key={`hoh-${index}`}
+              className={`image-item fade-in absolute w-80 md:w-[500px] h-48 md:h-52 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 hover:shadow-3xl ${
+                index % 2 === 0 ? 'left-[5%]' : 'right-[5%]'
+              } md:block hidden`}
+              style={{ 
+                top: `${10 + index * 100}px`,
+                marginTop: '0'
+              }}
+              data-delay={image.delay}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 320px, 500px"
+              />
+            </div>
+          ))}
+          
+          {/* Mobile Layout for HackOnHills-6.0 */}
+          <div className="md:hidden flex flex-col items-center gap-5">
+            {hackOnHills6Images.map((image, index) => (
               <div
                 key={`hoh-mobile-${index}`}
                 className="image-item fade-in w-80 h-44 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 opacity-0 transform translate-y-12 scale-90 relative"
