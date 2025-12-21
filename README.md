@@ -1,8 +1,8 @@
 # App Team Official Website
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38bdf8)](https://tailwindcss.com/)
+[![JavaScript](https://img.shields.io/badge/Javascript-blue)](https://www.javascriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-38bdf8)](https://tailwindcss.com/)
 
 ## 🚀 Overview
 
@@ -21,6 +21,6 @@ Welcome to the official repository for the **App Team** website. This platform s
 
 - **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Language:** [JavaScript](https://www.javascriptlang.org/)
 - **Animations:** [Framer Motion](https://www.framer.com/motion/)
 - **Icons:** [Lucide React](https://lucide.dev/)
