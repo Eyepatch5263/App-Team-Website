@@ -16,7 +16,7 @@ const ubuntu = Ubuntu({
 
 function HeroSection() {
   const router = useRouter();
-  const goToProject = () => router.push("/projects");
+  const goToMembers = () => router.push("/member");
   // const goToGithub = () => router.push("/githubRegistration");
 
   return (
@@ -65,9 +65,9 @@ function HeroSection() {
         >
           <button
             className="bg-[#a594f9] border-2 border-[#140b29] text-[#140b29] px-8 py-4 rounded-full cursor-pointer font-semibold text-lg hover:bg-[#140b29] hover:text-[#a594f9] hover:border-[#a594f9] transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-            onClick={goToProject}
+            onClick={goToMembers}
           >
-            Explore Our Work
+            Meet Our Team
           </button>
           {/* <button
             className="border-2 border-[#a594f9] text-[#a594f9] px-8 py-4 rounded-full cursor-pointer font-semibold text-lg hover:bg-[#a594f9] hover:text-[#140b29] transform hover:scale-105 transition-all duration-300"
