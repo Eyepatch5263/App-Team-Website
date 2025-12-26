@@ -213,18 +213,26 @@ const Footer = () => {
                 <ul className="list-none flex flex-col gap-3">
                   <li>
                     <a
-                      href="#nimbus"
+                      href="/events"
                       className="footer-link text-gray-400 no-underline text-sm hover:text-indigo-400"
                     >
-                      Nimbus 2k24
+                      HackOnHills 7.0
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/events"
                       className="footer-link text-gray-400 no-underline text-sm hover:text-indigo-400"
                     >
-                      Hackathons
+                      HackOnHills 6.0
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/events"
+                      className="footer-link text-gray-400 no-underline text-sm hover:text-indigo-400"
+                    >
+                      Nimbus 2k25
                     </a>
                   </li>
                 </ul>
@@ -236,22 +244,6 @@ const Footer = () => {
                   Contact
                 </h3>
                 <ul className="list-none flex flex-col gap-3">
-                  <li>
-                    <a
-                      href="#"
-                      className="footer-link text-gray-400 no-underline text-sm hover:text-indigo-400"
-                    >
-                      hello@appteam.dev
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="footer-link text-gray-400 no-underline text-sm hover:text-indigo-400"
-                    >
-                      +91 9876547654
-                    </a>
-                  </li>
                   <li>
                     <a
                       href="https://www.instagram.com/appteam_nith/"
