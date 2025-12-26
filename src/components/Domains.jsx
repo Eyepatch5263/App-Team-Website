@@ -62,12 +62,12 @@ const OurDomains = () => {
       description: 'Building decentralized applications, smart contracts, and blockchain-based solutions for the future.',
     },
     {
-      title: 'VR/AR Development',
-      description: 'Creating immersive virtual and augmented reality experiences for entertainment, education, and enterprise.',
+      title: 'Open Source',
+      description: 'Fostering innovation through collaborative software development, community contributions, and transparent codebases.',
     },
     {
-      title: 'IoT Development',
-      description: 'Connecting the physical world with smart devices, sensors, and automated systems for Industry 4.0.',
+      title: 'Cloud Computing',
+      description: 'Architecting scalable, and flexible infrastructure solutions using modern cloud providers and serverless technologies.',
     }
   ];
 
