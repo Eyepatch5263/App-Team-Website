@@ -31,7 +31,7 @@ const Footer = () => {
                             Bridging Design<br />and Engineering.
                         </h2>
                         <p className="text-gray-500 max-w-sm text-lg font-light leading-relaxed">
-                            The official technical society of NIT Hamirpur. We design and build high-performance digital solutions for the next generation.
+                            The core technical club of NIT Hamirpur. We design and build high-performance digital solutions for the next generation.
                         </p>
                     </div>
 
